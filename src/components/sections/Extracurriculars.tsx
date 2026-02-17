@@ -1,35 +1,49 @@
 export default function Extracurriculars() {
   return (
-    <section className="py-32 px-16 bg-white text-black border-t border-black/10">
+    <section
+      id="extracurriculars"
+      className="relative py-40 px-6 bg-white text-black border-t border-black/10"
+    >
+      <div className="max-w-6xl mx-auto">
+        <p className="text-sm tracking-[0.2em] uppercase text-black/40 mb-12">
+          Beyond Engineering
+        </p>
 
-      <h2 className="text-4xl mb-10">Extracurriculars</h2>
+        <div className="grid md:grid-cols-3 gap-16">
 
-      <div className="space-y-10 max-w-4xl text-gray-400">
-        <div>
-          <h3 className="text-xl text-white">Rensselaer Motorsport</h3>
-          <ul className="list-disc ml-6 mt-3 space-y-2">
-            <li>Redesigning cooling system for drivetrain changes</li>
-            <li>Performed FEA on rear wing truss, improving FoS by 2%</li>
-            <li>Manufactured jigs and fabricated suspension components</li>
-          </ul>
-        </div>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">
+              Rensselaer Motorsport
+            </h3>
+            <ul className="space-y-3 text-black/70">
+              <li>Redesigned cooling system for drivetrain changes</li>
+              <li>Performed FEA on rear wing truss, improving FoS by 2%</li>
+              <li>Manufactured jigs and fabricated suspension components</li>
+            </ul>
+          </div>
 
-        <div>
-          <h3 className="text-xl text-white">Eagle Scout — Scouting America</h3>
-          <ul className="list-disc ml-6 mt-3 space-y-2">
-            <li>Planned and built a 10×3 ft trail bridge</li>
-            <li>Senior Patrol Leader and Patrol Leader</li>
-            <li>50+ hours of community service</li>
-          </ul>
-        </div>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">
+              Eagle Scout
+            </h3>
+            <ul className="space-y-3 text-black/70">
+              <li>Planned and built a 10×3 ft trail bridge</li>
+              <li>14+ years of performance experience</li>
+              <li>Leadership roles & regional recognition</li>
+            </ul>
+          </div>
 
-        <div>
-          <h3 className="text-xl text-white">Cello Performance</h3>
-          <ul className="list-disc ml-6 mt-3 space-y-2">
-            <li>14+ years of private and ensemble performance</li>
-            <li>PMEA Region 1 finalist</li>
-            <li>Pittsburgh Symphony Orchestra side-by-side alternate</li>
-          </ul>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">
+              Eagle Scout · Cello Performance
+            </h3>
+            <ul className="space-y-3 text-black/70">
+              <li>Planned and built a 10×3 ft trail bridge</li>
+              <li>14+ years of performance experience</li>
+              <li>Leadership roles & regional recognition</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import CADCarousel from "./CADCarousel";
 
 export default function CADSection() {
   return (
-    <section
+    <section id="portfolio"
       style={{
         background: "black",
         padding: "100px 0",

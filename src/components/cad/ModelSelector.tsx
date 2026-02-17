@@ -38,7 +38,7 @@ export default function ModelSelector({
       >
         <div>
           <h3 style={{ textAlign: "center", marginBottom: "0.5rem" }}>
-            Assembled
+            
           </h3>
           <div style={{ height: "400px" }}>
             <CADViewer modelPath={path} />

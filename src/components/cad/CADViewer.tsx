@@ -11,7 +11,7 @@ export default function CADViewer({ modelPath }: { modelPath: string }) {
     background: "#f1f1f1",
     borderRadius: "12px",
     padding: "12px",
-    height: "100%",
+    height: "380px",
     boxShadow: "inset 0 0 0 1px rgba(0,0,0,0.08)",
   }}
 >

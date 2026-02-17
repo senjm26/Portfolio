@@ -1,14 +1,41 @@
 export default function Skills() {
   return (
-    <section className="py-32 px-16 bg-white text-black border-t border-black/10">
+    <section
+      id="skills"
+      className="relative py-40 px-6 bg-white text-black border-t border-black/10"
+    >
+      <div className="max-w-6xl mx-auto">
+        <p className="text-sm tracking-[0.2em] uppercase text-black/40 mb-12">
+          Skills
+        </p>
 
-      <h2 className="text-4xl mb-10">Skills</h2>
+        <div className="grid md:grid-cols-3 gap-16">
 
-      <p className="max-w-4xl text-gray-400 leading-relaxed">
-        Siemens NX, SolidWorks, SolidWorks FEA, Mastercam, CNC Machining,
-        Manual Machining, Product Development & Launch,
-        Customer Service, Google Workspace, Microsoft Office
-      </p>
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Design & CAD</h3>
+            <p className="text-black/70 leading-relaxed">
+              Siemens NX, SolidWorks, SolidWorks FEA
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Manufacturing</h3>
+            <p className="text-black/70 leading-relaxed">
+              Mastercam, CNC Machining, Manual Machining,
+              Product Development & Launch
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Technical & Tools</h3>
+            <p className="text-black/70 leading-relaxed">
+              Google Workspace, Microsoft Office,
+              Systems Troubleshooting
+            </p>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 }
