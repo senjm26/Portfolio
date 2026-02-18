@@ -9,22 +9,60 @@ import ModelSelector from "./ModelSelector";
 const slides = [
   {
     id: "about",
-    title: "About My CAD Work",
+    title: "About My Engineering Work",
     description: (
+    <>
       <p>
-        I focus on mechanical CAD, assemblies, and design-for-manufacturing
-        with real-world constraints in mind.
+        I am experienced using Siemens NX and SolidWorks through coursework,
+        Rensselaer Motorsport, and personal projects with a passion for making
+        a design a manufacturable reality.
       </p>
-    ),
-    content: null,
+
+      <p style={{ marginTop: "12px" }}>
+        I am currently working on designing and building a new pit cart for Rensselaer Motorsport
+        and recreating a v12 engine as a personal project.
+      </p>
+    </>
+  ),
+    content: (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="/images/nx.svg"
+        alt="NX Logo"
+        style={{
+          width: "100%",
+          maxWidth: "250px",
+          borderRadius: "12px",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+        }}
+      />
+
+      <img
+        src="/images/solidworks.png"
+        alt="SolidWorks Logo"
+        style={{
+          width: "100%",
+          maxWidth: "250px",
+          borderRadius: "12px",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+        }}
+      />
+    </div>
+  ),
   },
   {
     id: "silent-float",
-    title: "Silent Float Assembly",
+    title: "Toilet Fill Valve",
     description: (
       <p>
-        Assembly designed in Siemens NX with emphasis on manufacturability
-        and clean interfaces.
+        This assembly is a recreation of a toilet fill valve that I made in my CAD class.
       </p>
     ),
     content: (
@@ -36,10 +74,11 @@ const slides = [
   },
   {
     id: "cube-test",
-    title: "Cube Test",
+    title: "Rensselaer Motorsport Check In Box",
     description: (
       <p>
-        Simple test geometry used to validate lighting and interaction.
+        This project is a simple box that I made for a new attendance system at Rensselaer Motorsport.
+        The box is a custom design that houses a breadbord with 3 LEDs and a id reader.
       </p>
     ),
     content: (
@@ -54,8 +93,8 @@ const slides = [
   title: "Truss Structural Analysis",
   description: (
     <p>
-      Structural truss simulation with load case visualization and
-      displacement comparison.
+      I did this study in Rensselaer Motorsport to improve the Factor of Safety for the rear wing truss.
+      I slightly changed the geometry of the trusses and increased the Factor of Safety by 1.4.
     </p>
   ),
   content: (

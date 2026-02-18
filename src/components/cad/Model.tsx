@@ -31,9 +31,9 @@ export default function Model({ path }: ModelProps) {
     const cam = camera as THREE.PerspectiveCamera;
     const maxDim = Math.max(size.x, size.y, size.z);
     const fov = (cam.fov * Math.PI) / 180;
-    const distance = maxDim / (2 * Math.tan(fov / 2));
+    const distance = (maxDim / (2 * Math.tan(fov / 2))) * 0.9;
 
-    cam.position.set(distance * 1.3, distance * 0.9, distance * 1.2);
+    cam.position.set(distance * 1.05, distance * 0.8, distance * 1.0);
     cam.near = distance / 100;
     cam.far = distance * 100;
     cam.lookAt(0, 0, 0);

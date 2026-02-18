@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Linkedin, FileDown } from "lucide-react";
-
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
@@ -62,15 +62,15 @@ export default function Hero() {
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8 }}
     style={{
-      fontSize: "clamp(40px, 6vw, 72px)",
+      fontSize: "clamp(100px, 6vw, 72px)",
       fontWeight: 600,
       letterSpacing: "-1.5px",
       lineHeight: 1.1,
     }}
   >
-    J
-    <br />
-    S
+    Jay
+    
+    Sen
   </motion.h1>
 
   <motion.p
@@ -86,8 +86,42 @@ export default function Hero() {
       lineHeight: 1.6,
     }}
   >
-    I design assemblies and mechanical systems with precision,
-    manufacturability, and long-term performance in mind.
+    <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4, duration: 0.8 }}
+  style={{
+    marginTop: "20px",
+    fontSize: "clamp(40px, 2.5vw, 28px)",
+    fontWeight: 600,
+    opacity: 0.85,
+  }}
+>
+  <TypeAnimation
+    sequence={[
+      "Student...",
+      2000,
+      "",
+      800,
+      "Engineer...",
+      2000,
+      "",
+      800,
+      "Builder...",
+      2000,
+      "",
+      800,
+      "Creator...",
+      2000,
+      "",
+      800,
+    ]}
+    speed={50}
+    deletionSpeed={40}
+    repeat={Infinity}
+  />
+</motion.div>
+ 
   </motion.p>
 
   {/* Icons */}
@@ -97,15 +131,15 @@ export default function Hero() {
       target="_blank"
       className="hover:opacity-70 transition"
     >
-      <FileDown size={22} />
+      <FileDown size={30} />
     </a>
 
     <a
-      href="https://linkedin.com/in/yourname"
+      href="https://www.linkedin.com/in/jaymsen/"
       target="_blank"
       className="hover:opacity-70 transition"
     >
-      <Linkedin size={22} />
+      <Linkedin size={30} />
     </a>
   </div>
 </div>

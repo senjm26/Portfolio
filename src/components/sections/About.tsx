@@ -13,23 +13,24 @@ export default function About() {
           </p>
 
           <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
-            Designing with intent.
+            "Intellectual growth should commence at birth and cease only at death."
             <br />
-            Engineering with clarity.
+            -Albert Einstein
           </h2>
         </div>
 
         {/* Right Column — Narrative */}
         <div>
           <p className="text-lg leading-relaxed text-black/70">
-            Replace this with your raw narrative. Focus on how you approach
-            design, what problems you enjoy solving, and what separates your
-            thinking from standard execution.
+            I am a mechanical engineering student with a focus on design using CAD and FEA and a passion for manufacturing.
           </p>
 
           <p className="mt-8 text-lg leading-relaxed text-black/70">
-            Add a second paragraph that speaks to long-term vision,
-            technical depth, or the environments you thrive in.
+            Outside of academics and professional work, I play the cello and love learning new skills. I have been 
+            playing the cello for 14+ years, and I still love it to this day. I am currently working on learning the 
+            1st movement of Dvorak Cello Concerto in B Minor. Additionally, I love learning and experimenting with new
+            skills. I have dabbled into origami, photography, and website creation, and I am now learning stock trading
+            and content creation.  
           </p>
         </div>
       </div>
