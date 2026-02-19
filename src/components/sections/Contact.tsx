@@ -39,13 +39,13 @@ export default function Contact() {
           </h2>
 
           <p className="text-black/70 leading-relaxed mb-10">
-            I’m open to engineering opportunities, technical collaboration,
-            and design-focused projects.
+            I’m open to engineering opportunities, internships,
+            and design focused projects.
           </p>
 
           <div className="space-y-4 text-black/70">
             <p>Pennsylvania, United States</p>
-            <p>your.email@example.com</p>
+            <p>senjm26@gmail.com</p>
           </div>
 
           <div className="mt-10 flex gap-6">
@@ -58,7 +58,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com/in/yourname"
+              href="https://www.linkedin.com/in/jaymsen/"
               target="_blank"
               className="hover:opacity-70 transition"
             >

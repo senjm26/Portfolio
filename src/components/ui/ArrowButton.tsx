@@ -10,18 +10,20 @@ export default function ArrowButton({
   return (
     <div
       onClick={onClick}
-      style={{
-        fontSize: "3rem",
-        color: "white",
-        cursor: "pointer",
-        userSelect: "none",
-        opacity: 0.7,
-        transition: "opacity 0.3s ease",
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-      onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.7")}
+      className="
+        w-12 h-12 md:w-16 md:h-16
+        flex items-center justify-center
+        rounded-full
+        bg-black/70
+        text-white
+        text-2xl md:text-4xl
+        cursor-pointer
+        transition
+        hover:scale-110 hover:bg-black
+        shadow-lg
+      "
     >
-      {direction === "left" ? "<" : ">"}
+      {direction === "left" ? "‹" : "›"}
     </div>
   );
 }

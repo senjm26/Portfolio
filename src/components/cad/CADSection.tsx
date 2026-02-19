@@ -18,7 +18,7 @@ export default function CADSection() {
           marginBottom: "60px",
         }}
       >
-        CAD & Design Portfolio
+        Engineering Portfolio
       </h2>
 
       <CADCarousel />

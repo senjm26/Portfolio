@@ -23,13 +23,13 @@ export default function Experience() {
               </div>
 
                 <ul className="mt-6 space-y-3 text-black/70 leading-relaxed">
-                 <li>Redesigned cooling system to accommodate drivetrain changes</li>
-                 <li>Performed FEA on rear wing truss improving structural factor of safety</li>
-                 <li>Manufactured jigs and fabricated suspension components</li>
+                 <li>Currently working on designing and building a new pit cart for the team</li>
+                 <li>Conducted FEA on rear wing truss using SolidWorks, improving Factor of Safety by 1.4</li>
+                 <li>Manufactured jigs, support tabs, and suspension parts</li>
                </ul>
 
                    <p className="mt-6 text-sm text-black/50">
-                     Tools: Siemens NX · FEA · CNC Machining · Manufacturing Processes
+                     Tools: SolidWorks · SolidWorks FEA · CNC Machining · Manufacturing Processes
                   </p>
                </div>
 
@@ -48,7 +48,7 @@ export default function Experience() {
             <ul className="mt-6 space-y-3 text-black/70 leading-relaxed">
               <li>Built and deployed a dynamic Next.js website modernizing brand identity</li>
               <li>Resolved hardware, software, and security system issues</li>
-              <li>Participated in contract and manufacturer planning discussions</li>
+              <li>Participated in contract and planning discussions with manufacturers and customers</li>
             </ul>
           </div>
 

@@ -111,7 +111,7 @@ const slides = [
         alt="Truss Analysis 1"
         style={{
           width: "100%",
-          maxWidth: "900px",
+          maxWidth: "800px",
           borderRadius: "12px",
           boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
         }}
@@ -122,7 +122,7 @@ const slides = [
         alt="Truss Analysis 2"
         style={{
           width: "100%",
-          maxWidth: "900px",
+          maxWidth: "800px",
           borderRadius: "12px",
           boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
         }}

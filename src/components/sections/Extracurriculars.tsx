@@ -13,37 +13,37 @@ export default function Extracurriculars() {
 
           <div>
             <h3 className="text-2xl font-semibold mb-4">
-              Rensselaer Motorsport
-            </h3>
-            <ul className="space-y-3 text-black/70">
-              <li>Redesigned cooling system for drivetrain changes</li>
-              <li>Performed FEA on rear wing truss, improving FoS by 2%</li>
-              <li>Manufactured jigs and fabricated suspension components</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-semibold mb-4">
               Eagle Scout
             </h3>
             <ul className="space-y-3 text-black/70">
-              <li>Planned and built a 10×3 ft trail bridge</li>
-              <li>14+ years of performance experience</li>
-              <li>Leadership roles & regional recognition</li>
+              <li>· Eagle Project: Planned and built a 10×3 ft trail bridge</li>
+              <li>· Leadership: Senior Patrol Leader (Feb 2023 - Jun 2025), Patrol Leader (Feb 2022 - Feb 2023)</li>
+              <li>· 12+ years of Scouting experience, 6 High Adventure Excursions, 34 Merit Badges earned</li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-2xl font-semibold mb-4">
-              Eagle Scout · Cello Performance
+              Cello Performance
             </h3>
             <ul className="space-y-3 text-black/70">
-              <li>Planned and built a 10×3 ft trail bridge</li>
-              <li>14+ years of performance experience</li>
-              <li>Leadership roles & regional recognition</li>
+              <li>· 14+ years of performance experience</li>
+              <li>· Pennsylvania Music Educators Association Region 1 finalist (2019)</li>
+              <li>· Pittsburgh Symphony Orchestra Side-by-Side alternate cellist</li>
+              <li>· Principal Cellist for Gateway High School Orchestra Performance at Disney Springs, Lake Buena Vista, FL</li>
             </ul>
           </div>
 
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">
+              Hobbies
+            </h3>
+            <ul className="space-y-3 text-black/70">
+              <li>· Researching the engineering behind fighter jets and racecars</li>
+              <li>· Top 1% in Clash Royale</li>
+              <li>· Photography</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

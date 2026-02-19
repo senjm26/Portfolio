@@ -18,18 +18,18 @@ export default function Education() {
                 Rensselaer Polytechnic Institute
               </h3>
               <p className="text-black/50 mt-2">
-                B.S. Mechanical Engineering
+                Troy, NY
               </p>
             </div>
 
             <div className="md:col-span-2 text-black/70 leading-relaxed">
               <p>
-                GPA 3.62 · Rensselaer Medalist
+                B.S. Mechanical Engineering · GPA 3.62 · Rensselaer Medalist
               </p>
               <p className="mt-4 text-sm text-black/50">
-                Calculus I–III, Differential Equations, Linear Algebra,
+                Relevant Coursework: Calculus I–III, Differential Equations, Linear Algebra,
                 Statics, Materials Science, Physics I, CAD,
-                Engineering Processes, Applied Statistics
+                Engineering Processes, Applied Statistics, Chemistry I-II
               </p>
             </div>
           </div>
@@ -41,12 +41,14 @@ export default function Education() {
                 Gateway High School
               </h3>
               <p className="text-black/50 mt-2">
-                GPA 3.81 · Rank 5 / 289
+                Pittsburgh, PA
               </p>
             </div>
 
-            <div className="text-black/70 leading-relaxed">
-              Distinguished Honor Roll · National Honor Society · AP Scholar
+            <div className="md:col-span-2 text-black/70 leading-relaxed">
+            <p>
+                GPA 3.81 · Rank 5 / 289 · Distinguished Honor Roll · National Honor Society · AP Scholar
+              </p>
             </div>
           </div>
 

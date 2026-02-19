@@ -12,52 +12,25 @@ export default function CADCard({
   children: ReactNode;
 }) {
   return (
-    <div
-      style={{
-        background: "white",
-        color: "black",
-        borderRadius: "18px",
-        padding: "32px",
-        width: "100%",
-        maxWidth: "1200px",
-        minHeight: "520px",
-        boxShadow: "0 30px 80px rgba(0,0,0,0.35)",
-      }}
-    >
-      <h3 style={{ marginBottom: "24px" }}>{title}</h3>
+    <div className="bg-white text-black rounded-2xl p-6 md:p-10 w-full max-w-6xl shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1.4fr",
-          gap: "32px",
-        }}
-        className="cad-card-grid"
-      >
-        {/* LEFT: Description */}
-        <div style={{ fontSize: "1rem", lineHeight: 1.6 }}>
+      <h3 className="text-xl md:text-2xl font-medium mb-6">
+        {title}
+      </h3>
+
+      <div className="flex flex-col gap-8 md:grid md:grid-cols-[1fr_1.4fr]">
+
+        {/* TEXT (Always first on mobile) */}
+        <div className="text-base leading-relaxed">
           {description}
         </div>
 
-        {/* RIGHT: 3D Viewer */}
-        <div
-          style={{
-            width: "100%",
-            height: "380px",
-          }}
-        >
+        {/* MEDIA */}
+        <div className="w-full h-[300px] md:h-[380px]">
           {children}
         </div>
-      </div>
 
-      {/* Mobile support */}
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .cad-card-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
+      </div>
     </div>
   );
 }
