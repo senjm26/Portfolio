@@ -12,7 +12,7 @@ export default function CADCard({
   children: ReactNode;
 }) {
   return (
-    <div className="bg-white text-black rounded-2xl overflow-hidden p-6 md:p-10 pb-12 md:pb-16 w-full max-w-6xl shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
+    <div className="bg-white text-black rounded-2xl p-6 md:p-10 pb-12 md:pb-16 w-full max-w-6xl shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
 
 
       <h3 className="text-xl md:text-2xl font-medium mb-6">
