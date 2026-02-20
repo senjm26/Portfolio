@@ -27,9 +27,10 @@ export default function CADCard({
         </div>
 
         {/* MEDIA */}
-        <div className="w-full h-[260px] sm:h-[300px] md:h-[380px]">
-          {children}
-        </div>
+<div className="w-full aspect-[4/3] md:aspect-[16/10]">
+  {children}
+</div>
+
 
       </div>
     </div>

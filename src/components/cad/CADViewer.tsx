@@ -6,11 +6,14 @@ import Model from "./Model";
 
 export default function CADViewer({ modelPath }: { modelPath: string }) {
   return (
-    <div className="w-full h-full bg-[#f1f1f1] rounded-xl p-3 shadow-inner">
+    <div className="w-full h-full bg-[#f1f1f1] rounded-xl p-3 shadow-inner overflow-hidden">
       <Canvas
-        camera={{ fov: 45 }}
+        camera={{ fov: 45, position: [0, 0, 6] }}
         dpr={[1, 1.5]}
-        style={{ width: "100%", height: "100%" }}
+        gl={{
+          antialias: true,
+          powerPreference: "high-performance",
+        }}
         onCreated={({ gl }) => {
           gl.domElement.addEventListener(
             "webglcontextlost",
@@ -22,22 +25,18 @@ export default function CADViewer({ modelPath }: { modelPath: string }) {
           );
         }}
       >
-
-        {/* Soft base */}
+        {/* Lighting */}
         <ambientLight intensity={0.6} />
-
-        {/* Key light */}
         <directionalLight position={[5, 8, 10]} intensity={0.9} />
-
-        {/* Fill light */}
         <directionalLight position={[-5, -3, 5]} intensity={0.4} />
-
-        {/* Rim light */}
         <directionalLight position={[0, 5, -10]} intensity={0.3} />
 
         <Model path={modelPath} />
-        <OrbitControls enableDamping />
 
+        <OrbitControls
+          enableDamping
+          dampingFactor={0.08}
+        />
       </Canvas>
     </div>
   );
