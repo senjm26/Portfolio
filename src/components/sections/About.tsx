@@ -22,7 +22,8 @@ export default function About() {
         {/* Right Column — Narrative */}
         <div>
           <p className="text-lg leading-relaxed text-black/70">
-            I am a mechanical engineering student with a focus on design using CAD and FEA and a passion for manufacturing.
+            I am a mechanical engineering student with a focus on design using CAD and FEA and a 
+            passion for manufacturing.
           </p>
 
           <p className="mt-8 text-lg leading-relaxed text-black/70">

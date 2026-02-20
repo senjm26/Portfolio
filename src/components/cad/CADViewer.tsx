@@ -1,18 +1,30 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Bounds } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import Model from "./Model";
 
 export default function CADViewer({ modelPath }: { modelPath: string }) {
   return (
-    <div className="w-full h-full bg-[#f1f1f1] rounded-xl p-3 shadow-inner overflow-hidden">
+    <div className="w-full h-full bg-[#f1f1f1] rounded-xl shadow-inner overflow-hidden">
+  <div className="w-full h-full p-3">
       <Canvas
+      style={{ width: "100%", height: "100%" }}
         camera={{ fov: 45, position: [0, 0, 6] }}
         dpr={[1, 1.5]}
         gl={{
           antialias: true,
           powerPreference: "high-performance",
+        }}
+        onCreated={({ gl }) => {
+          gl.domElement.addEventListener(
+            "webglcontextlost",
+            (event) => {
+              event.preventDefault();
+              console.log("WebGL context lost");
+            },
+            false
+          );
         }}
       >
         {/* Lighting */}
@@ -21,17 +33,14 @@ export default function CADViewer({ modelPath }: { modelPath: string }) {
         <directionalLight position={[-5, -3, 5]} intensity={0.4} />
         <directionalLight position={[0, 5, -10]} intensity={0.3} />
 
-        {/* Auto-fit wrapper */}
-        <Bounds fit clip observe margin={1.2}>
-          <Model path={modelPath} />
-        </Bounds>
+        <Model path={modelPath} />
 
         <OrbitControls
-          makeDefault
           enableDamping
           dampingFactor={0.08}
         />
       </Canvas>
-    </div>
+      </div>
+</div>
   );
 }
