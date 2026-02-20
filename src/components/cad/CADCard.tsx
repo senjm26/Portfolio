@@ -19,7 +19,7 @@ export default function CADCard({
         {title}
       </h3>
 
-      <div className="flex flex-col gap-8 md:grid md:grid-cols-[1fr_1.4fr]">
+      <div className="flex flex-col gap-8 md:grid md:grid-cols-[1.1fr_1fr] md:items-start">
 
         {/* TEXT */}
         <div className="text-base leading-relaxed">
@@ -27,7 +27,7 @@ export default function CADCard({
         </div>
 
         {/* MEDIA */}
-<div className="w-full aspect-[4/3] md:aspect-[16/10]">
+<div className="w-full max-w-full aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/9]">
   {children}
 </div>
 
