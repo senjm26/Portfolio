@@ -154,8 +154,7 @@ export default function CADCarousel() {
   }, []);
 
   const totalSlides = slides.length;
-
-  const slideWidth = width * 0.85; // 👈 KEY: smaller than container
+  const slideWidth = width * 0.9;
   const sidePadding = (width - slideWidth) / 2;
 
   const clampIndex = (i: number) =>
@@ -183,48 +182,22 @@ export default function CADCarousel() {
   };
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <div className="relative w-full flex justify-center pb-16">
+
       {/* Counter */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-40px",
-          right: "10%",
-          fontSize: "14px",
-          opacity: 0.6,
-        }}
-      >
+      <div className="absolute -top-10 right-[10%] text-sm opacity-60">
         ({index + 1} / {totalSlides})
       </div>
 
       {/* Left Arrow */}
-      <div
-        style={{
-          position: "absolute",
-          left: "5%",
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 20,
-        }}
-      >
+      <div className="absolute left-2 md:left-[5%] top-1/2 -translate-y-1/2 z-20">
         <ArrowButton direction="left" onClick={() => goTo(index - 1)} />
       </div>
 
       {/* Viewport */}
       <div
         ref={containerRef}
-        style={{
-          width: "100%",
-          maxWidth: "1100px",
-          overflow: "hidden",
-        }}
+        className="w-full max-w-[1100px] overflow-hidden"
       >
         <motion.div
           drag={dragEnabled ? "x" : false}
@@ -240,55 +213,53 @@ export default function CADCarousel() {
           onDragEnd={handleDragEnd}
           transition={{ type: "spring", stiffness: 120, damping: 20 }}
         >
-          {slides.map((slide, i) => (
-            <div
-              key={slide.id}
-              style={{
-                minWidth: `${slideWidth}px`,
-                paddingLeft: i === 0 ? `${sidePadding}px` : 0,
-                paddingRight:
-                  i === totalSlides - 1 ? `${sidePadding}px` : 0,
-                display: "flex",
-                justifyContent: "center",
-                boxSizing: "border-box",
-              }}
-            >
-              <motion.div
-                animate={{
-                  scale: i === index ? 1 : 0.9,
-                  opacity: i === index ? 1 : 0.45,
+          {slides.map((slide, i) => {
+            const isActive = i === index;
+
+            return (
+              <div
+                key={slide.id}
+                style={{
+                  minWidth: `${slideWidth}px`,
+                  paddingLeft: i === 0 ? `${sidePadding}px` : 0,
+                  paddingRight:
+                    i === totalSlides - 1 ? `${sidePadding}px` : 0,
+                  display: "flex",
+                  justifyContent: "center",
+                  boxSizing: "border-box",
                 }}
-                transition={{ duration: 0.35 }}
-                style={{ width: "100%" }}
               >
-                <CADCard
-                  title={slide.title}
-                  description={slide.description}
+                <motion.div
+                  animate={{
+                    scale: isActive ? 1 : 0.92,
+                    opacity: isActive ? 1 : 0.4,
+                  }}
+                  transition={{ duration: 0.35 }}
+                  style={{ width: "100%" }}
                 >
-                  {/* DISABLE CAROUSEL DRAG WHEN INTERACTING WITH 3D */}
-                  <div
-                    onPointerEnter={() => setDragEnabled(false)}
-                    onPointerLeave={() => setDragEnabled(true)}
+                  <CADCard
+                    title={slide.title}
+                    description={slide.description}
                   >
-                    {slide.content}
-                  </div>
-                </CADCard>
-              </motion.div>
-            </div>
-          ))}
+                    {/* 🔥 KEY FIX: Only mount active slide content */}
+                    {isActive && (
+                      <div
+                        onPointerEnter={() => setDragEnabled(false)}
+                        onPointerLeave={() => setDragEnabled(true)}
+                      >
+                        {slide.content}
+                      </div>
+                    )}
+                  </CADCard>
+                </motion.div>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
 
       {/* Right Arrow */}
-      <div
-        style={{
-          position: "absolute",
-          right: "5%",
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 20,
-        }}
-      >
+      <div className="absolute right-2 md:right-[5%] top-1/2 -translate-y-1/2 z-20">
         <ArrowButton direction="right" onClick={() => goTo(index + 1)} />
       </div>
     </div>

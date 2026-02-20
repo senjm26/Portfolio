@@ -11,12 +11,12 @@ export default function ArrowButton({
     <div
       onClick={onClick}
       className="
-        w-12 h-12 md:w-16 md:h-16
+         w-10 h-10 md:w-16 md:h-16
         flex items-center justify-center
         rounded-full
         bg-black/70
         text-white
-        text-2xl md:text-4xl
+        text-xl md:text-4xl
         cursor-pointer
         transition
         hover:scale-110 hover:bg-black
