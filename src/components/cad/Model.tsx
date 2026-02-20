@@ -28,16 +28,24 @@ export default function Model({ path }: ModelProps) {
     scene.updateMatrixWorld(true);
 
     // Camera fit
-    const cam = camera as THREE.PerspectiveCamera;
-    const maxDim = Math.max(size.x, size.y, size.z);
-    const fov = (cam.fov * Math.PI) / 180;
-    const distance = (maxDim / (2 * Math.tan(fov / 2))) * 0.9;
+    // Camera fit
+const cam = camera as THREE.PerspectiveCamera;
 
-    cam.position.set(distance * 1.05, distance * 0.8, distance * 1.0);
-    cam.near = distance / 100;
-    cam.far = distance * 100;
-    cam.lookAt(0, 0, 0);
-    cam.updateProjectionMatrix();
+const fov = (cam.fov * Math.PI) / 180;
+const aspect = cam.aspect;
+
+// Calculate distances required for height and width
+const heightDistance = size.y / (2 * Math.tan(fov / 2));
+const widthDistance = size.x / (2 * Math.tan(fov / 2)) / aspect;
+
+// Use the larger of the two
+const distance = Math.max(heightDistance, widthDistance) * 1.2;
+
+cam.position.set(distance, distance * 0.6, distance);
+cam.near = distance / 100;
+cam.far = distance * 100;
+cam.lookAt(0, 0, 0);
+cam.updateProjectionMatrix();
 
     // Fix CAD shading
     scene.traverse((child) => {
