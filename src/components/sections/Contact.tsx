@@ -50,7 +50,7 @@ export default function Contact() {
 
           <div className="mt-10 flex gap-6">
             <a
-              href="/resume.pdf"
+              href="/"
               target="_blank"
               className="hover:opacity-70 transition"
             >

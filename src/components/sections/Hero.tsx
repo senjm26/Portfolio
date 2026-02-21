@@ -111,7 +111,7 @@ export default function Hero() {
         {/* Icons */}
         <div className="mt-10 flex justify-center gap-6">
           <a
-            href="/resume.pdf"
+            href="/"
             target="_blank"
             className="hover:opacity-70 transition"
           >
