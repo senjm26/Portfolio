@@ -119,7 +119,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/jaymsen/"
+            href="https://www.linkedin.com/in/user/"
             target="_blank"
             className="hover:opacity-70 transition"
           >
