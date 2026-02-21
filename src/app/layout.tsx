@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 export const metadata = {
-  title: "Your Name – Engineering Portfolio",
-  description: "Engineering & CAD Portfolio",
+  title: "Jay Sen",
+  description: "Engineering Portfolio",
 };
 
 export default function RootLayout({
