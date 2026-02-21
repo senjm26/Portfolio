@@ -14,8 +14,7 @@ const slides = [
     <>
       <p>
         I am experienced using Siemens NX and SolidWorks through coursework,
-        Rensselaer Motorsport, and personal projects with a passion for making
-        a design a manufacturable reality.
+        Rensselaer Motorsport, and personal projects.
       </p>
 
       <p style={{ marginTop: "12px" }}>
@@ -130,7 +129,36 @@ const slides = [
     </div>
   ),
 },
-
+{
+  id: "machined lightsaber",
+  title: "Machining",
+  description: (
+    <p>
+      This is a replica 
+    </p>
+  ),
+  content: (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="/images/lightsaber.jpg"
+        alt="Lightsaber"
+        style={{
+          width: "100%",
+          maxWidth: "800px",
+          borderRadius: "12px",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+        }}
+      />
+    </div>
+  ),
+},
 ];
 
 export default function CADCarousel() {

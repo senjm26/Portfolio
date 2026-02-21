@@ -31,7 +31,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="text-white font-medium tracking-wide text-lg">
-          Jay Sen
+          JS
         </div>
 
         {/* Desktop Links */}

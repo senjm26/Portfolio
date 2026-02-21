@@ -45,7 +45,7 @@ export default function Contact() {
 
           <div className="space-y-4 text-black/70">
             <p>Pennsylvania, United States</p>
-            <p>senjm26@gmail.com</p>
+            <p>email</p>
           </div>
 
           <div className="mt-10 flex gap-6">

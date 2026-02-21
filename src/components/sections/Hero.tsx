@@ -68,7 +68,7 @@ export default function Hero() {
             lineHeight: 1.1,
           }}
         >
-          Jay Sen
+          JS
         </motion.h1>
 
         {/* Typing Animation */}
