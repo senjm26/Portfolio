@@ -27,50 +27,48 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+      <div className="relative max-w-7xl mx-auto flex items-center px-8 py-5">
 
-        {/* Logo */}
-        <div className="flex items-center gap-4 text-white">
-          <div className="font-semibold tracking-[0.3em] text-base">
-            JS
-          </div>
-          <div className="hidden md:block text-[10px] tracking-[4px] text-white/40 uppercase">
-            ENGINEERING SYSTEMS
-          </div>
-        </div>
+  {/* Left - Logo */}
+  <div className="text-white font-semibold tracking-[0.3em] text-base">
+    JS
+  </div>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-14 text-white/70 text-xs tracking-[0.25em] uppercase">
-          <a href="#about" className="hover:text-white transition-colors duration-200">
-            About
-          </a>
-          <a href="#portfolio" className="hover:text-white transition-colors duration-200">
-            Portfolio
-          </a>
-          <a href="#experience" className="hover:text-white transition-colors duration-200">
-            Experience
-          </a>
-          <a href="#education" className="hover:text-white transition-colors duration-200">
-            Education
-          </a>
-        </div>
+  {/* Center - Desktop Links */}
+  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-14 text-white/70 text-xs tracking-[0.25em] uppercase">
+    <a href="#about" className="hover:text-white transition-colors duration-200">
+      About
+    </a>
+    <a href="#portfolio" className="hover:text-white transition-colors duration-200">
+      Portfolio
+    </a>
+    <a href="#experience" className="hover:text-white transition-colors duration-200">
+      Experience
+    </a>
+    <a href="#education" className="hover:text-white transition-colors duration-200">
+      Education
+    </a>
+  </div>
 
-        {/* Desktop CTA */}
-        <a
-          href="#contact"
-          className="hidden md:block text-xs tracking-[0.25em] uppercase px-6 py-2 border border-white/20 hover:border-white hover:text-white transition-all duration-300"
-        >
-          Contact
-        </a>
+  {/* Right - CTA */}
+  <div className="ml-auto hidden md:block">
+    <a
+      href="#contact"
+      className="text-xs tracking-[0.25em] uppercase px-6 py-2 border border-white/20 hover:border-white hover:text-white transition-all duration-300"
+    >
+      Contact
+    </a>
+  </div>
 
-        {/* Mobile */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-white text-xl"
-        >
-          ☰
-        </button>
-      </div>
+  {/* Mobile */}
+  <button
+    onClick={() => setOpen(!open)}
+    className="md:hidden ml-auto text-white text-xl"
+  >
+    ☰
+  </button>
+
+</div>
 
       {/* Mobile Menu */}
       <AnimatePresence>

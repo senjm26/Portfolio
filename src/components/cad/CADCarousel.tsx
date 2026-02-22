@@ -18,30 +18,27 @@ const slides = [
           I develop parametric mechanical systems using Siemens NX and SolidWorks
           through academic coursework, Rensselaer Motorsport, and independent design studies.
         </p>
-
         <p>
           My focus lies in assembly design, tolerance considerations, and structural
           validation through FEA-driven iteration.
         </p>
-
         <p>
-          Current projects include the design and fabrication of a new pit cart for
-          Rensselaer Motorsport and a fully modeled V12 engine recreation as a
-          personal systems study.
+          Current projects include the design and fabrication of a new pit cart and
+          a fully modeled V12 engine recreation as a systems study.
         </p>
       </>
     ),
     content: (
-      <div className="flex flex-col gap-6 items-center">
+      <div className="flex gap-8 items-center justify-center">
         <img
           src="/images/nx.svg"
           alt="NX Logo"
-          className="w-full max-w-[250px] rounded-xl shadow-lg"
+          className="w-[160px] object-contain"
         />
         <img
           src="/images/solidworks.png"
           alt="SolidWorks Logo"
-          className="w-full max-w-[250px] rounded-xl shadow-lg"
+          className="w-[160px] object-contain"
         />
       </div>
     ),
@@ -52,8 +49,8 @@ const slides = [
     title: "Toilet Fill Valve",
     description: (
       <p>
-        This assembly is a recreation of a toilet fill valve created in CAD coursework,
-        focusing on part relationships and assembly constraints.
+        Recreation of a toilet fill valve assembly focused on part relationships
+        and constraint-driven modeling.
       </p>
     ),
     content: (
@@ -66,11 +63,11 @@ const slides = [
 
   {
     id: "cube-test",
-    title: "Rensselaer Motorsport Check In Box",
+    title: "Rensselaer Motorsport Check-In Box",
     description: (
       <p>
-        Custom enclosure housing a breadboard with three LEDs and an ID reader.
-        Designed for functionality, accessibility, and modular integration.
+        Custom enclosure housing a breadboard, three LEDs, and ID reader.
+        Designed for accessibility and modular integration.
       </p>
     ),
     content: (
@@ -86,11 +83,11 @@ const slides = [
     title: "Truss Structural Analysis",
     description: (
       <p>
-        Conducted structural optimization to increase rear wing truss Factor of
-        Safety by 1.4 through geometry refinement and stress distribution analysis.
+        Structural optimization increased rear wing truss FOS by 1.4
+        through geometry refinement and stress redistribution.
       </p>
     ),
-    content: "TRUSS_CONTENT", // handled dynamically below
+    content: "TRUSS_CONTENT",
   },
 
   {
@@ -106,7 +103,7 @@ const slides = [
       <img
         src="/images/lightsaber.jpg"
         alt="Lightsaber"
-        className="w-full max-w-[800px] rounded-xl shadow-lg"
+        className="w-full max-w-[650px] object-contain"
       />
     ),
   },
@@ -121,10 +118,12 @@ export default function CADCarousel() {
   const baseLength = slides.length;
   const extendedSlides = [...slides, ...slides, ...slides];
 
-  const [index, setIndex] = useState(baseLength); // start in middle
+  const [index, setIndex] = useState(baseLength);
   const [width, setWidth] = useState(0);
   const [dragEnabled, setDragEnabled] = useState(true);
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
+
+  /* ---------- Measure Width ---------- */
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -138,8 +137,18 @@ export default function CADCarousel() {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  const slideWidth = width * 0.9;
+  const slideWidth = width * 0.86; // slightly tighter than before
   const sidePadding = (width - slideWidth) / 2;
+
+  /* ---------- Fix Initial Alignment ---------- */
+
+  useEffect(() => {
+    if (slideWidth > 0) {
+      x.set(-index * slideWidth);
+    }
+  }, [slideWidth]);
+
+  /* ---------- Navigation ---------- */
 
   const goTo = (i: number) => {
     setIndex(i);
@@ -152,16 +161,16 @@ export default function CADCarousel() {
 
     let newIndex = index;
 
-    if (offset < -slideWidth / 4 || velocity < -500) {
+    if (offset < -slideWidth / 5 || velocity < -500) {
       newIndex = index + 1;
-    } else if (offset > slideWidth / 4 || velocity > 500) {
+    } else if (offset > slideWidth / 5 || velocity > 500) {
       newIndex = index - 1;
     }
 
     goTo(newIndex);
   };
 
-  /* ---------- Infinite Snap Logic ---------- */
+  /* ---------- Infinite Snap ---------- */
 
   useEffect(() => {
     if (!slideWidth) return;
@@ -187,22 +196,22 @@ export default function CADCarousel() {
   }, [index, slideWidth]);
 
   return (
-    <div className="relative w-full flex justify-center pb-24">
+    <div className="relative w-full flex justify-center pb-16">
 
       {/* Counter */}
-      <div className="absolute -top-12 right-[8%] text-xs tracking-[0.3em] uppercase text-white/40">
+      <div className="absolute -top-10 right-[7%] text-[11px] tracking-[0.35em] uppercase text-white/40">
         ({(index % baseLength) + 1} / {baseLength})
       </div>
 
       {/* Left Arrow */}
-      <div className="absolute left-2 md:left-[5%] top-1/2 -translate-y-1/2 z-20">
+      <div className="absolute left-3 md:left-[6%] top-1/2 -translate-y-1/2 z-20">
         <ArrowButton direction="left" onClick={() => goTo(index - 1)} />
       </div>
 
       {/* Viewport */}
       <div
         ref={containerRef}
-        className="w-full max-w-[1100px] overflow-hidden"
+        className="w-full max-w-[1050px] overflow-hidden"
       >
         <motion.div
           drag={dragEnabled ? "x" : false}
@@ -216,7 +225,7 @@ export default function CADCarousel() {
             cursor: dragEnabled ? "grab" : "default",
           }}
           onDragEnd={handleDragEnd}
-          transition={{ type: "spring", stiffness: 120, damping: 20 }}
+          transition={{ type: "spring", stiffness: 180, damping: 30 }}
         >
           {extendedSlides.map((slide, i) => {
             const isActive = i === index;
@@ -231,15 +240,14 @@ export default function CADCarousel() {
                     i === extendedSlides.length - 1 ? `${sidePadding}px` : 0,
                   display: "flex",
                   justifyContent: "center",
-                  boxSizing: "border-box",
                 }}
               >
                 <motion.div
                   animate={{
-                    scale: isActive ? 1 : 0.92,
-                    opacity: isActive ? 1 : 0.55,
+                    scale: isActive ? 1 : 0.96,
+                    opacity: isActive ? 1 : 0.75,
                   }}
-                  transition={{ duration: 0.35 }}
+                  transition={{ duration: 0.3 }}
                   style={{ width: "100%" }}
                 >
                   <CADCard
@@ -252,11 +260,11 @@ export default function CADCarousel() {
                         onPointerLeave={() => setDragEnabled(true)}
                       >
                         {slide.id === "truss-analysis" ? (
-                          <div className="flex flex-col gap-6 items-center">
+                          <div className="flex flex-col gap-5 items-center">
                             <img
                               src="/images/truss1.png"
                               alt="Truss Analysis 1"
-                              className="cursor-zoom-in w-full max-w-[800px] rounded-xl shadow-lg"
+                              className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
                               onClick={() =>
                                 setExpandedImage("/images/truss1.png")
                               }
@@ -264,7 +272,7 @@ export default function CADCarousel() {
                             <img
                               src="/images/truss1.1.png"
                               alt="Truss Analysis 2"
-                              className="cursor-zoom-in w-full max-w-[800px] rounded-xl shadow-lg"
+                              className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
                               onClick={() =>
                                 setExpandedImage("/images/truss1.1.png")
                               }
@@ -284,20 +292,20 @@ export default function CADCarousel() {
       </div>
 
       {/* Right Arrow */}
-      <div className="absolute right-2 md:right-[5%] top-1/2 -translate-y-1/2 z-20">
+      <div className="absolute right-3 md:right-[6%] top-1/2 -translate-y-1/2 z-20">
         <ArrowButton direction="right" onClick={() => goTo(index + 1)} />
       </div>
 
-      {/* Image Modal */}
+      {/* Modal */}
       {expandedImage && (
         <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-8"
+          className="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center z-50 p-6"
           onClick={() => setExpandedImage(null)}
         >
           <img
             src={expandedImage}
             alt="Expanded view"
-            className="max-w-full max-h-full rounded-2xl shadow-2xl"
+            className="max-w-full max-h-full rounded-2xl"
           />
         </div>
       )}

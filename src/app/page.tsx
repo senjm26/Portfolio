@@ -7,6 +7,7 @@ import CADSection from "@/components/cad/CADSection";
 import Skills from "@/components/sections/Skills";
 import Extracurriculars from "@/components/sections/Extracurriculars";
 import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Education />
       <Extracurriculars />
       <Contact />
+      <Footer />
     </main>
   );
 }
