@@ -2,144 +2,86 @@
 
 import { motion } from "framer-motion";
 import { Linkedin, FileDown } from "lucide-react";
-import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
-    <section
-      style={{
-        color: "white",
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Background */}
+    <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+
+      {/* Brushed Background */}
       <div
+        className="absolute inset-0 z-0"
         style={{
-          position: "absolute",
-          inset: 0,
           backgroundImage: "url('/images/background.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          filter: "brightness(0.55)",
-          zIndex: 0,
+          filter: "brightness(0.5)",
         }}
       />
 
-      {/* Glow */}
-      <div
-        style={{
-          position: "absolute",
-          width: "600px",
-          height: "600px",
-          background:
-            "radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          filter: "blur(80px)",
-          zIndex: 1,
-        }}
-      />
+      {/* Subtle Grid Overlay */}
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-      {/* Content */}
-      <div
-        style={{
-          maxWidth: "900px",
-          padding: "0 40px",
-          textAlign: "center",
-          position: "relative",
-          zIndex: 2,
-        }}
-      >
-        <motion.h1
+      {/* Center Content */}
+      <div className="relative z-10 text-center px-6 max-w-5xl">
+
+        {/* Name */}
+        <div className="relative inline-block">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-[clamp(70px,7vw,120px)] font-semibold tracking-tight"
+          >
+            JS
+          </motion.h1>
+
+          {/* Precision Corners */}
+          <div className="absolute -left-8 -top-8 w-8 h-8 border-l-[1.5px] border-t-[1.5px] border-white/50" />
+          <div className="absolute -right-8 -top-8 w-8 h-8 border-r-[1.5px] border-t-[1.5px] border-white/50" />
+          <div className="absolute -left-8 -bottom-8 w-8 h-8 border-l-[1.5px] border-b-[1.5px] border-white/50" />
+          <div className="absolute -right-8 -bottom-8 w-8 h-8 border-r-[1.5px] border-b-[1.5px] border-white/50" />
+        </div>
+
+        {/* Strong Static Statement */}
+        <motion.p
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          style={{
-            fontSize: "clamp(72px, 6vw, 100px)",
-            fontWeight: 600,
-            letterSpacing: "-1.5px",
-            lineHeight: 1.1,
-          }}
+          animate={{ opacity: 0.8, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="mt-10 text-xl md:text-2xl font-light tracking-wide max-w-2xl mx-auto leading-relaxed"
         >
-          JS
-        </motion.h1>
+          Mechanical Engineer focused on precision design, structural analysis, and engineered systems.
+        </motion.p>
 
-        {/* Typing Animation */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 0.85, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          style={{
-            marginTop: "28px",
-            fontSize: "clamp(22px, 2.5vw, 32px)",
-            fontWeight: 500,
-            letterSpacing: "0.5px",
-          }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mt-14 flex justify-center gap-6 flex-wrap"
         >
-          <TypeAnimation
-            sequence={[
-              "Student...",
-              2000,
-              "",
-              800,
-              "Engineer...",
-              2000,
-              "",
-              800,
-              "Builder...",
-              2000,
-              "",
-              800,
-              "Creator...",
-              2000,
-              "",
-              800,
-            ]}
-            speed={50}
-            deletionSpeed={40}
-            repeat={Infinity}
-          />
-        </motion.div>
 
-        {/* Icons */}
-        <div className="mt-10 flex justify-center gap-6">
           <a
-            href="/"
-            target="_blank"
-            className="hover:opacity-70 transition"
+            href="/resume.pdf"
+            className="px-8 py-3 border border-white/30 text-white tracking-wide text-sm uppercase rounded-md hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3"
           >
-            <FileDown size={30} />
+            <FileDown size={16} />
+            Resume
           </a>
 
           <a
             href="https://www.linkedin.com/in/user/"
             target="_blank"
-            className="hover:opacity-70 transition"
+            className="px-8 py-3 border border-white/30 text-white tracking-wide text-sm uppercase rounded-md hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3"
           >
-            <Linkedin size={30} />
+            <Linkedin size={16} />
+            LinkedIn
           </a>
-        </div>
+
+        </motion.div>
       </div>
 
-      {/* Fade to white */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-          height: "180px",
-          background:
-            "linear-gradient(to bottom, rgba(0,0,0,0) 0%, white 100%)",
-          zIndex: 3,
-        }}
-      />
+      {/* Bottom Fade Into Neutral Instead of White */}
+      <div className="absolute bottom-0 w-full h-40 bg-gradient-to-b from-transparent to-neutral-100 z-20" />
     </section>
   );
 }

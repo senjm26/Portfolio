@@ -6,62 +6,54 @@ import CADCard from "./CADCard";
 import ArrowButton from "../ui/ArrowButton";
 import ModelSelector from "./ModelSelector";
 
+/* -------------------- SLIDES -------------------- */
+
 const slides = [
   {
     id: "about",
     title: "About My Engineering Work",
     description: (
-    <>
-      <p>
-        I am experienced using Siemens NX and SolidWorks through coursework,
-        Rensselaer Motorsport, and personal projects.
-      </p>
+      <>
+        <p>
+          I develop parametric mechanical systems using Siemens NX and SolidWorks
+          through academic coursework, Rensselaer Motorsport, and independent design studies.
+        </p>
 
-      <p style={{ marginTop: "12px" }}>
-        I am currently working on designing and building a new pit cart for Rensselaer Motorsport
-        and recreating a v12 engine as a personal project.
-      </p>
-    </>
-  ),
+        <p>
+          My focus lies in assembly design, tolerance considerations, and structural
+          validation through FEA-driven iteration.
+        </p>
+
+        <p>
+          Current projects include the design and fabrication of a new pit cart for
+          Rensselaer Motorsport and a fully modeled V12 engine recreation as a
+          personal systems study.
+        </p>
+      </>
+    ),
     content: (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        alignItems: "center",
-      }}
-    >
-      <img
-        src="/images/nx.svg"
-        alt="NX Logo"
-        style={{
-          width: "100%",
-          maxWidth: "250px",
-          borderRadius: "12px",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-        }}
-      />
-
-      <img
-        src="/images/solidworks.png"
-        alt="SolidWorks Logo"
-        style={{
-          width: "100%",
-          maxWidth: "250px",
-          borderRadius: "12px",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-        }}
-      />
-    </div>
-  ),
+      <div className="flex flex-col gap-6 items-center">
+        <img
+          src="/images/nx.svg"
+          alt="NX Logo"
+          className="w-full max-w-[250px] rounded-xl shadow-lg"
+        />
+        <img
+          src="/images/solidworks.png"
+          alt="SolidWorks Logo"
+          className="w-full max-w-[250px] rounded-xl shadow-lg"
+        />
+      </div>
+    ),
   },
+
   {
     id: "silent-float",
     title: "Toilet Fill Valve",
     description: (
       <p>
-        This assembly is a recreation of a toilet fill valve that I made in my CAD class.
+        This assembly is a recreation of a toilet fill valve created in CAD coursework,
+        focusing on part relationships and assembly constraints.
       </p>
     ),
     content: (
@@ -71,13 +63,14 @@ const slides = [
       />
     ),
   },
+
   {
     id: "cube-test",
     title: "Rensselaer Motorsport Check In Box",
     description: (
       <p>
-        This project is a simple box that I made for a new attendance system at Rensselaer Motorsport.
-        The box is a custom design that houses a breadbord with 3 LEDs and a id reader.
+        Custom enclosure housing a breadboard with three LEDs and an ID reader.
+        Designed for functionality, accessibility, and modular integration.
       </p>
     ),
     content: (
@@ -87,87 +80,51 @@ const slides = [
       />
     ),
   },
-  {
-  id: "truss-analysis",
-  title: "Truss Structural Analysis",
-  description: (
-    <p>
-      I did this study in Rensselaer Motorsport to improve the Factor of Safety for the rear wing truss.
-      I slightly changed the geometry of the trusses and increased the Factor of Safety by 1.4.
-    </p>
-  ),
-  content: (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        alignItems: "center",
-      }}
-    >
-      <img
-        src="/images/truss1.png"
-        alt="Truss Analysis 1"
-        style={{
-          width: "100%",
-          maxWidth: "800px",
-          borderRadius: "12px",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-        }}
-      />
 
-      <img
-        src="/images/truss1.1.png"
-        alt="Truss Analysis 2"
-        style={{
-          width: "100%",
-          maxWidth: "800px",
-          borderRadius: "12px",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-        }}
-      />
-    </div>
-  ),
-},
-{
-  id: "machined lightsaber",
-  title: "Machining",
-  description: (
-    <p>
-      This is a replica 
-    </p>
-  ),
-  content: (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        alignItems: "center",
-      }}
-    >
+  {
+    id: "truss-analysis",
+    title: "Truss Structural Analysis",
+    description: (
+      <p>
+        Conducted structural optimization to increase rear wing truss Factor of
+        Safety by 1.4 through geometry refinement and stress distribution analysis.
+      </p>
+    ),
+    content: "TRUSS_CONTENT", // handled dynamically below
+  },
+
+  {
+    id: "machined-lightsaber",
+    title: "Machining",
+    description: (
+      <p>
+        Precision-machined replica built with attention to tolerances,
+        surface finish, and dimensional control.
+      </p>
+    ),
+    content: (
       <img
         src="/images/lightsaber.jpg"
         alt="Lightsaber"
-        style={{
-          width: "100%",
-          maxWidth: "800px",
-          borderRadius: "12px",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-        }}
+        className="w-full max-w-[800px] rounded-xl shadow-lg"
       />
-    </div>
-  ),
-},
+    ),
+  },
 ];
+
+/* -------------------- CAROUSEL -------------------- */
 
 export default function CADCarousel() {
   const containerRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
 
-  const [index, setIndex] = useState(0);
+  const baseLength = slides.length;
+  const extendedSlides = [...slides, ...slides, ...slides];
+
+  const [index, setIndex] = useState(baseLength); // start in middle
   const [width, setWidth] = useState(0);
   const [dragEnabled, setDragEnabled] = useState(true);
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -181,17 +138,12 @@ export default function CADCarousel() {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  const totalSlides = slides.length;
   const slideWidth = width * 0.9;
   const sidePadding = (width - slideWidth) / 2;
 
-  const clampIndex = (i: number) =>
-    Math.max(0, Math.min(i, totalSlides - 1));
-
   const goTo = (i: number) => {
-    const newIndex = clampIndex(i);
-    setIndex(newIndex);
-    x.set(-newIndex * slideWidth);
+    setIndex(i);
+    x.set(-i * slideWidth);
   };
 
   const handleDragEnd = (_: any, info: any) => {
@@ -209,12 +161,37 @@ export default function CADCarousel() {
     goTo(newIndex);
   };
 
+  /* ---------- Infinite Snap Logic ---------- */
+
+  useEffect(() => {
+    if (!slideWidth) return;
+
+    const min = baseLength;
+    const max = baseLength * 2;
+
+    if (index < min) {
+      const newIndex = index + baseLength;
+      setTimeout(() => {
+        setIndex(newIndex);
+        x.set(-newIndex * slideWidth);
+      }, 0);
+    }
+
+    if (index >= max) {
+      const newIndex = index - baseLength;
+      setTimeout(() => {
+        setIndex(newIndex);
+        x.set(-newIndex * slideWidth);
+      }, 0);
+    }
+  }, [index, slideWidth]);
+
   return (
-    <div className="relative w-full flex justify-center pb-16">
+    <div className="relative w-full flex justify-center pb-24">
 
       {/* Counter */}
-      <div className="absolute -top-10 right-[10%] text-sm opacity-60">
-        ({index + 1} / {totalSlides})
+      <div className="absolute -top-12 right-[8%] text-xs tracking-[0.3em] uppercase text-white/40">
+        ({(index % baseLength) + 1} / {baseLength})
       </div>
 
       {/* Left Arrow */}
@@ -230,7 +207,7 @@ export default function CADCarousel() {
         <motion.div
           drag={dragEnabled ? "x" : false}
           dragConstraints={{
-            left: -slideWidth * (totalSlides - 1),
+            left: -slideWidth * (extendedSlides.length - 1),
             right: 0,
           }}
           style={{
@@ -241,17 +218,17 @@ export default function CADCarousel() {
           onDragEnd={handleDragEnd}
           transition={{ type: "spring", stiffness: 120, damping: 20 }}
         >
-          {slides.map((slide, i) => {
+          {extendedSlides.map((slide, i) => {
             const isActive = i === index;
 
             return (
               <div
-                key={slide.id}
+                key={i}
                 style={{
                   minWidth: `${slideWidth}px`,
                   paddingLeft: i === 0 ? `${sidePadding}px` : 0,
                   paddingRight:
-                    i === totalSlides - 1 ? `${sidePadding}px` : 0,
+                    i === extendedSlides.length - 1 ? `${sidePadding}px` : 0,
                   display: "flex",
                   justifyContent: "center",
                   boxSizing: "border-box",
@@ -260,7 +237,7 @@ export default function CADCarousel() {
                 <motion.div
                   animate={{
                     scale: isActive ? 1 : 0.92,
-                    opacity: isActive ? 1 : 0.4,
+                    opacity: isActive ? 1 : 0.55,
                   }}
                   transition={{ duration: 0.35 }}
                   style={{ width: "100%" }}
@@ -269,13 +246,33 @@ export default function CADCarousel() {
                     title={slide.title}
                     description={slide.description}
                   >
-                    {/* 🔥 KEY FIX: Only mount active slide content */}
                     {isActive && (
                       <div
                         onPointerEnter={() => setDragEnabled(false)}
                         onPointerLeave={() => setDragEnabled(true)}
                       >
-                        {slide.content}
+                        {slide.id === "truss-analysis" ? (
+                          <div className="flex flex-col gap-6 items-center">
+                            <img
+                              src="/images/truss1.png"
+                              alt="Truss Analysis 1"
+                              className="cursor-zoom-in w-full max-w-[800px] rounded-xl shadow-lg"
+                              onClick={() =>
+                                setExpandedImage("/images/truss1.png")
+                              }
+                            />
+                            <img
+                              src="/images/truss1.1.png"
+                              alt="Truss Analysis 2"
+                              className="cursor-zoom-in w-full max-w-[800px] rounded-xl shadow-lg"
+                              onClick={() =>
+                                setExpandedImage("/images/truss1.1.png")
+                              }
+                            />
+                          </div>
+                        ) : (
+                          slide.content
+                        )}
                       </div>
                     )}
                   </CADCard>
@@ -290,6 +287,20 @@ export default function CADCarousel() {
       <div className="absolute right-2 md:right-[5%] top-1/2 -translate-y-1/2 z-20">
         <ArrowButton direction="right" onClick={() => goTo(index + 1)} />
       </div>
+
+      {/* Image Modal */}
+      {expandedImage && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-8"
+          onClick={() => setExpandedImage(null)}
+        >
+          <img
+            src={expandedImage}
+            alt="Expanded view"
+            className="max-w-full max-h-full rounded-2xl shadow-2xl"
+          />
+        </div>
+      )}
     </div>
   );
 }

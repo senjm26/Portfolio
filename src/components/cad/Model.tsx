@@ -58,5 +58,3 @@ cam.updateProjectionMatrix();
 
   return <primitive object={scene} />;
 }
-
-useGLTF.preload("/models/silent_float_assy.glb");
