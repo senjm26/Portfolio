@@ -33,7 +33,7 @@ export default function Extracurriculars() {
   return (
     <section
       id="extracurriculars"
-      className="relative py-32 px-6 bg-white text-black border-t border-black/10"
+      className="relative py-32 px-6 bg-neutral-50 text-black border-t border-black/10"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}

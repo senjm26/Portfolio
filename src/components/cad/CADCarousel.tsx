@@ -33,12 +33,12 @@ const slides = [
         <img
           src="/images/nx.svg"
           alt="NX Logo"
-          className="w-[160px] object-contain"
+          className="w-[160px] rounded-xl object-contain"
         />
         <img
           src="/images/solidworks.png"
           alt="SolidWorks Logo"
-          className="w-[160px] object-contain"
+          className="w-[160px] object-contain rounded-xl"
         />
       </div>
     ),
@@ -62,7 +62,7 @@ const slides = [
   },
 
   {
-    id: "cube-test",
+    id: "box",
     title: "Rensselaer Motorsport Check-In Box",
     description: (
       <p>
@@ -72,7 +72,7 @@ const slides = [
     ),
     content: (
       <ModelSelector
-        name="Cube Test"
+        name="Box"
         path="/models/box_assy.glb"
       />
     ),
@@ -103,7 +103,7 @@ const slides = [
       <img
         src="/images/lightsaber.jpg"
         alt="Lightsaber"
-        className="w-full max-w-[650px] object-contain"
+        className="w-full max-w-[650px] rounded-xl object-contain"
       />
     ),
   },

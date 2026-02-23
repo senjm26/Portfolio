@@ -1,7 +1,10 @@
+import { PenTool, Wrench, MonitorCog } from "lucide-react";
+
 export default function Skills() {
   const skillGroups = [
     {
       title: "Design & CAD",
+      icon: <PenTool size={18} strokeWidth={1.8} />,
       skills: [
         "Siemens NX",
         "SolidWorks",
@@ -10,6 +13,7 @@ export default function Skills() {
     },
     {
       title: "Manufacturing",
+      icon: <Wrench size={18} strokeWidth={1.8} />,
       skills: [
         "Mastercam",
         "CNC Machining",
@@ -19,6 +23,7 @@ export default function Skills() {
     },
     {
       title: "Technical & Tools",
+      icon: <MonitorCog size={18} strokeWidth={1.8} />,
       skills: [
         "Google Workspace",
         "Microsoft Office",
@@ -30,15 +35,15 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-32 px-6 bg-white text-black border-t border-black/10"
+      className="relative py-32 px-6 bg-neutral-50 text-black border-t border-black/10"
     >
       <div className="max-w-6xl mx-auto">
+        
         {/* Header */}
         <div className="mb-20">
           <p className="text-md tracking-[0.35em] uppercase text-black/80 mb-6">
             Skills
           </p>
-        
         </div>
 
         {/* Skill Cards */}
@@ -48,9 +53,15 @@ export default function Skills() {
               key={index}
               className="border border-black/10 rounded-2xl p-8 hover:shadow-md transition"
             >
-              <h3 className="text-xl font-semibold mb-6">
-                {group.title}
-              </h3>
+              {/* Title + Icon */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="text-black/70">
+                  {group.icon}
+                </div>
+                <h3 className="text-xl font-semibold">
+                  {group.title}
+                </h3>
+              </div>
 
               <div className="flex flex-wrap gap-3">
                 {group.skills.map((skill, i) => (

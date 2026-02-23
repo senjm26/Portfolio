@@ -43,14 +43,20 @@ export default function Hero() {
         </div>
 
         {/* Strong Static Statement */}
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 0.8, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="mt-10 text-xl md:text-2xl font-light tracking-wide max-w-2xl mx-auto leading-relaxed"
-        >
-          Mechanical Engineer focused on precision design, structural analysis, and engineered systems.
-        </motion.p>
+        <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 0.85, y: 0 }}
+  transition={{ delay: 0.3, duration: 0.8 }}
+  className="mt-12 max-w-5xl mx-auto text-center"
+>
+  <p className="text-xl md:text-2xl font-light italic leading-relaxed">
+    “Live as if you were to die tomorrow. Learn as if you were to live forever.”
+  </p>
+
+  <p className="mt-6 text-sm tracking-[0.2em] uppercase">
+    - Albert Einstein -
+  </p>
+</motion.div>
 
         {/* CTA Buttons */}
         <motion.div

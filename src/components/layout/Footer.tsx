@@ -18,7 +18,7 @@ export default function Footer() {
       {/* Content */}
       <div className="relative z-20 max-w-6xl mx-auto px-6 py-14 text-center text-black">
         <p className="text-lg font-semibold tracking-tight">
-          Your Name
+          JS
         </p>
 
         <p className="text-sm text-black/60 mt-3">

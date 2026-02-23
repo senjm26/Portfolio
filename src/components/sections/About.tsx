@@ -7,45 +7,50 @@ export default function About() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-24 items-center">
 
         {/* LEFT — Image */}
-        <div className="flex justify-center md:justify-start">
-          <div className="relative">
+<div className="flex justify-center md:justify-start">
+  <div className="relative w-92 h-92">
 
-            <div className="w-80 md:w-[400px] aspect-[3/4] overflow-hidden border border-black/20 shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
-              <img
-                src="/images/"
-                alt="Portrait"
-                className="w-full h-full object-cover"
-              />
-            </div>
+    {/* Grid squares behind */}
+    <div className="absolute -top-6 -left-6 w-full h-full -z-10 opacity-40">
+      <div className="w-full h-full bg-[linear-gradient(to_right,rgba(0,0,0,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[size:24px_24px]" />
+    </div>
 
-            {/* Offset frame */}
-            <div className="absolute -bottom-6 -right-6 w-full h-full border border-black/10 -z-10" />
-          </div>
-        </div>
+    {/* Outer metallic ring */}
+    <div className="absolute inset-0 rounded-full bg-[linear-gradient(145deg,#e5e7eb,#f3f4f6,#d1d5db)] shadow-xl" />
+
+    {/* Inner border ring */}
+    <div className="absolute inset-2 rounded-full border border-black/10" />
+
+    {/* Image */}
+    <div className="absolute inset-4 rounded-full overflow-hidden shadow-lg">
+      <img
+        src="/images/portrait1.jpg"
+        alt="Portrait"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+  </div>
+</div>
 
         {/* RIGHT — Content */}
-        <div>
+        <div className="max-w-xl">
 
-          <p className="text-md tracking-[0.35em] uppercase text-black/80 mb-6">
+          <p className="text-sm tracking-[0.3em] uppercase text-black/50 mb-8">
             About
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-10">
-            Engineering is both discipline and craft.
-          </h2>
-
-          <p className="text-lg leading-relaxed text-black/70">
-            I am a mechanical engineering student specializing in CAD-driven
-            design, finite element analysis, and manufacturing optimization.
-            My approach blends analytical rigor with an appreciation for
-            precision and execution.
+          <p className="text-lg leading-relaxed text-black/80">
+            I am a mechanical engineering student focused on CAD-driven design,
+            finite element analysis, and manufacturing optimization. My work
+            emphasizes precision, efficiency, and execution.
           </p>
 
           <p className="mt-8 text-lg leading-relaxed text-black/70">
-            Beyond engineering, I study the cello and pursue creative and
-            technical disciplines that demand patience and refinement.
-            Whether designing mechanical systems or interpreting complex
-            compositions, I value structure, iteration, and mastery.
+            Outside of engineering, I study the cello and pursue disciplines
+            that demand patience and refinement. Whether designing mechanical
+            systems or interpreting complex compositions, I value structure,
+            iteration, and mastery.
           </p>
 
         </div>
