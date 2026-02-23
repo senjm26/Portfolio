@@ -30,8 +30,8 @@ export default function Navbar() {
       <div className="relative max-w-7xl mx-auto flex items-center px-8 py-5">
 
   {/* Left - Logo */}
-  <div className="text-white font-semibold tracking-[0.3em] text-base">
-    JS
+  <div className="text-white font-semibold text-base">
+    Jay Sen
   </div>
 
   {/* Center - Desktop Links */}

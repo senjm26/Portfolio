@@ -8,22 +8,22 @@ export default function ArrowButton({
   onClick: () => void;
 }) {
   return (
-    <div
+    <button
       onClick={onClick}
       className="
-         w-10 h-10 md:w-16 md:h-16
+        w-10 h-10 sm:w-14 sm:h-14
         flex items-center justify-center
         rounded-full
-        bg-black/70
+        bg-black/80
         text-white
-        text-xl md:text-4xl
-        cursor-pointer
+        text-xl sm:text-3xl
+        backdrop-blur-md
         transition
         hover:scale-110 hover:bg-black
-        shadow-lg
+        active:scale-95
       "
     >
       {direction === "left" ? "‹" : "›"}
-    </div>
+    </button>
   );
 }

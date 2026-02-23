@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Linkedin, FileDown } from "lucide-react";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
@@ -32,7 +33,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="text-[clamp(70px,7vw,120px)] font-semibold tracking-tight"
           >
-            JS
+            Jay Sen
           </motion.h1>
 
           {/* Precision Corners */}
@@ -42,8 +43,35 @@ export default function Hero() {
           <div className="absolute -right-8 -bottom-8 w-8 h-8 border-r-[1.5px] border-b-[1.5px] border-white/50" />
         </div>
 
-        {/* Strong Static Statement */}
+        {/* Animated Identity */}
         <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4, duration: 0.8 }}
+  className="mt-10 sm:mt-20"
+>
+  <TypeAnimation
+    sequence={[
+      "Student...",
+      2000,
+      "Designer...",
+      2000,
+      "Builder...",
+      2000,
+      "Creator...",
+      2000,
+    ]}
+    wrapper="span"
+    speed={45}
+    deletionSpeed={35}
+    repeat={Infinity}
+    cursor={true}
+    className="block text-[clamp(18px,2vw,28px)] font-semibold tracking-tight text-white/80"
+  />
+</motion.div>
+
+{/* Strong Static Statement */}
+       {/* <motion.div
   initial={{ opacity: 0, y: 40 }}
   animate={{ opacity: 0.85, y: 0 }}
   transition={{ delay: 0.3, duration: 0.8 }}
@@ -56,16 +84,16 @@ export default function Hero() {
   <p className="mt-6 text-sm tracking-[0.2em] uppercase">
     - Albert Einstein -
   </p>
-</motion.div>
+</motion.div> */}
+
 
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-14 flex justify-center gap-6 flex-wrap"
         >
-
           <a
             href="/resume.pdf"
             className="px-8 py-3 border border-white/30 text-white tracking-wide text-sm uppercase rounded-md hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3"
@@ -82,11 +110,10 @@ export default function Hero() {
             <Linkedin size={16} />
             LinkedIn
           </a>
-
         </motion.div>
       </div>
 
-      {/* Bottom Fade Into Neutral Instead of White */}
+      {/* Bottom Fade */}
       <div className="absolute bottom-0 w-full h-40 bg-gradient-to-b from-transparent to-neutral-100 z-20" />
     </section>
   );
