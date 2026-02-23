@@ -40,12 +40,10 @@ export default function ExperienceSection() {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
-          <p className="text-sm tracking-widest text-gray-400 uppercase">
+          <p className="text-md tracking-[0.35em] uppercase text-black/80 mb-8">
             Experience
           </p>
-          <h2 className="mt-2 text-4xl font-bold text-black">
-            Engineering & Leadership
-          </h2>
+      
         </div>
 
         {/* Experience Cards */}

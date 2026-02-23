@@ -26,7 +26,7 @@ export default function About() {
         {/* RIGHT — Content */}
         <div>
 
-          <p className="text-xs tracking-[0.35em] uppercase text-black/40 mb-8">
+          <p className="text-md tracking-[0.35em] uppercase text-black/80 mb-6">
             About
           </p>
 

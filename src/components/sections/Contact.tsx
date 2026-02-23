@@ -27,7 +27,7 @@ export default function Contact() {
 
         {/* LEFT SIDE */}
         <div>
-          <p className="text-sm tracking-[0.2em] uppercase text-black/40 mb-6">
+          <p className="text-md tracking-[0.35em] uppercase text-black/80 mb-8">
             Contact
           </p>
 

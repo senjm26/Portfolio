@@ -38,12 +38,10 @@ export default function Extracurriculars() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-20">
-          <p className="text-sm tracking-[0.2em] uppercase text-black/40">
+          <p className="text-md tracking-[0.35em] uppercase text-black/80 mb-8">
             Beyond Engineering
           </p>
-          <h2 className="mt-4 text-4xl font-bold">
-            Leadership & Interests
-          </h2>
+          
         </div>
 
         {/* Cards */}
