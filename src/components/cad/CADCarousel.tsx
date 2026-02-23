@@ -196,7 +196,7 @@ export default function CADCarousel() {
   }, [index, slideWidth]);
 
   return (
-    <div className="relative w-full flex justify-center pb-16">
+    <div className="relative w-full flex justify-center items-center pb-16">
 
       {/* Counter */}
       <div className="absolute -top-10 right-[7%] text-[11px] tracking-[0.35em] uppercase text-white/40">
@@ -204,14 +204,14 @@ export default function CADCarousel() {
       </div>
 
       {/* Left Arrow */}
-      <div className="fixed left-3 md:left-[6%] top-1/2 -translate-y-1/2 z-20">
+      <div className="absolute left-3 md:left-[6%] top-[52%] md:top-1/2 md:-translate-y-1/2 z-20">
         <ArrowButton direction="left" onClick={() => goTo(index - 1)} />
       </div>
 
       {/* Viewport */}
       <div
         ref={containerRef}
-        className="w-full max-w-[1050px] overflow-hidden"
+        className="relative w-full max-w-[1050px] overflow-hidden min-h-[600px] md:min-h-[650px]"
       >
         <motion.div
           drag={dragEnabled ? "x" : false}
@@ -241,6 +241,7 @@ export default function CADCarousel() {
                   display: "flex",
                   justifyContent: "center",
                 }}
+                className="translate-x-2 md:translate-x-0"
               >
                 <motion.div
                   animate={{
@@ -292,14 +293,14 @@ export default function CADCarousel() {
       </div>
 
       {/* Right Arrow */}
-      <div className="fixed right-3 md:right-[6%] top-1/2 -translate-y-1/2 z-20">
+      <div className="absolute right-3 md:right-[6%] top-[52%] md:top-1/2 md:-translate-y-1/2 z-20">
         <ArrowButton direction="right" onClick={() => goTo(index + 1)} />
       </div>
 
       {/* Modal */}
       {expandedImage && (
         <div
-          className="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center z-50 p-6"
+          className="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center z-50 p-6 pl-4 md:pl-0"
           onClick={() => setExpandedImage(null)}
         >
           <img
