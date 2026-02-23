@@ -29,7 +29,7 @@ const slides = [
       </>
     ),
     content: (
-      <div className="flex gap-8 items-center justify-center">
+      <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
         <img
           src="/images/nx.svg"
           alt="NX Logo"
@@ -204,7 +204,7 @@ export default function CADCarousel() {
       </div>
 
       {/* Left Arrow */}
-      <div className="absolute left-3 md:left-[6%] top-1/2 -translate-y-1/2 z-20">
+      <div className="fixed left-3 md:left-[6%] top-1/2 -translate-y-1/2 z-20">
         <ArrowButton direction="left" onClick={() => goTo(index - 1)} />
       </div>
 
@@ -292,7 +292,7 @@ export default function CADCarousel() {
       </div>
 
       {/* Right Arrow */}
-      <div className="absolute right-3 md:right-[6%] top-1/2 -translate-y-1/2 z-20">
+      <div className="fixed right-3 md:right-[6%] top-1/2 -translate-y-1/2 z-20">
         <ArrowButton direction="right" onClick={() => goTo(index + 1)} />
       </div>
 
