@@ -75,7 +75,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/user/"
+            href="https://www.linkedin.com/in/jaymsen/"
             target="_blank"
             className="px-8 py-3 border border-white/30 text-white tracking-wide text-sm uppercase rounded-md hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3"
           >
