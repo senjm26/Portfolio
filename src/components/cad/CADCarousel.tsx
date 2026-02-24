@@ -332,7 +332,7 @@ useEffect(() => {
     />
   </div>
 ) : slide.id === "silent-float" ? (
-  <div className="relative w-full flex items-center justify-center">
+  <div className="relative w-full flex items-center justify-center max-w-[650px] mx-auto">
     {slide.content}
 
     {/* Floating Drawing Badge */}
