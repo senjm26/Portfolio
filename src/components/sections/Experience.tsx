@@ -9,7 +9,7 @@ export default function ExperienceSection() {
         "Performed FEA on rear wing truss increasing FoS by 1.4",
         "Manufactured jigs, suspension tabs, and support components",
       ],
-      tags: ["SolidWorks", "FEA", "CNC Machining", "Manufacturing"],
+      tags: ["SolidWorks", "SolidWorks Simulation", "CNC Machining", "Manufacturing"],
     },
     {
       title: "Director of IT — Sen Engineering Solutions",
@@ -18,7 +18,7 @@ export default function ExperienceSection() {
       bullets: [
         "Built and deployed a modern Next.js website",
         "Resolved hardware, software, and security systems",
-        "Participated in planning and contract discussions",
+        "Participated in planning and contract discussions with customers and manufacturers",
       ],
       tags: ["Next.js", "IT Systems", "Security", "Leadership"],
     },
@@ -27,9 +27,9 @@ export default function ExperienceSection() {
       date: "Feb 2024 – Aug 2025",
       location: "Pittsburgh, PA",
       bullets: [
-        "Delivered high-level customer service in fast-paced environment",
+        "Delivered high level, personalized customer service in fast paced environment",
         "Coordinated with kitchen and management staff",
-        "Maintained professionalism under high-volume shifts",
+        "Maintained a clean dining room and followed safety code and dietary restrictions",
       ],
       tags: ["Customer Service", "Teamwork", "Communication"],
     },

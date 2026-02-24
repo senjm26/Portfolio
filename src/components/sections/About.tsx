@@ -41,16 +41,15 @@ export default function About() {
           </p>
 
           <p className="text-lg leading-relaxed text-black/80">
-            I am a mechanical engineering student focused on CAD-driven design,
-            finite element analysis, and manufacturing optimization. My work
+            I am a mechanical engineering student focused on CAD design,
+            finite element analysis, and manufacturing. My work
             emphasizes precision, efficiency, and execution.
           </p>
 
           <p className="mt-8 text-lg leading-relaxed text-black/70">
-            Outside of engineering, I study the cello and pursue disciplines
-            that demand patience and refinement. Whether designing mechanical
-            systems or interpreting complex compositions, I value structure,
-            iteration, and mastery.
+            Outside of studies and professional work, I study the cello, workout at the gym, and expand my skillset. 
+            Whether it is origami, photography, web design, content creation, or another skill, I strive to always learn more.
+            
           </p>
 
         </div>

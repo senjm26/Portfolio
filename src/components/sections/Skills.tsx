@@ -8,7 +8,8 @@ export default function Skills() {
       skills: [
         "Siemens NX",
         "SolidWorks",
-        "SolidWorks FEA",
+        "SolidWorks Simulation",
+        "GD&T",
       ],
     },
     {

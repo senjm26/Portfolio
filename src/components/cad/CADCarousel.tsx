@@ -15,7 +15,7 @@ const slides = [
     description: (
       <>
         <p>
-          I develop mechanical systems using Siemens NX and SolidWorks
+          I am experienced in Siemens NX and SolidWorks
           through academic coursework, Rensselaer Motorsport, and personal design projects.
         </p>
         <p>
@@ -23,7 +23,7 @@ const slides = [
           validation through FEA.
         </p>
         <p>
-          Current projects include the design and fabrication of a new pit cart for Rensselaer Motorsport and
+          My current projects include the design and fabrication of a new pit cart for Rensselaer Motorsport and
           a fully modeled V12 engine recreation.
         </p>
       </>
@@ -48,10 +48,15 @@ const slides = [
     id: "silent-float",
     title: "Toilet Fill Valve",
     description: (
+      <>
       <p>
-        This is a recreation of a toilet fill valve assembly in Siemens NX focused on part relationships
-        and various modeling techniques.
+        This is a recreation of a toilet fill valve assembly in Siemens NX.
       </p>
+      <p>
+        The objective of this project is to demonstrate various modeling techniques, assembly creation, and part
+        relationships.
+      </p>
+      </>
     ),
     content: (
       <ModelSelector
@@ -65,11 +70,14 @@ const slides = [
     id: "box",
     title: "Rensselaer Motorsport Check-In Box",
     description: (
+      <>
       <p>
-        This box is a custom enclosure for a ID check in system at Rensselaer Motorsport which houses
-         a breadboard, three LEDs, and ID reader.
-        It is designed for easy storage and removal of components and quick iteration for design changes.
+        This box is a custom enclosure made in SolidWorks for a ID check in system at Rensselaer Motorsport. 
       </p>
+      <p>It  houses a breadboard, three LEDs, and ID reader.
+        It is designed for easy storage and removal of components and quick iteration for design changes.
+        </p>
+      </>
     ),
     content: (
       <ModelSelector
@@ -83,10 +91,13 @@ const slides = [
     id: "truss-analysis",
     title: "Truss Structural Analysis",
     description: (
+      <>
       <p>
-        This study is a structural optimization project in Rensselaer Motorsport where I increased rear wing truss FOS by 1.4
-        through geometry refinement and stress redistribution. 
+        This study is a structural optimization project using SolidWorks Simulation.
       </p>
+      <p>In Rensselaer Motorsport, I increased rear wing truss FOS by 1.4
+        through geometry refinement and stress redistribution. This work aided aero development for the 25-26 car.</p>
+      </>
     ),
     content: "TRUSS_CONTENT",
   },
@@ -95,11 +106,15 @@ const slides = [
     id: "machined-lightsaber",
     title: "Machining & Manufacturing",
     description: (
+      <>
       <p>
-        This precision machined replica of a lightsaber from Star Wars was built with attention to tolerances,
-        surface finish, and various manufacturing techniques. The replica in the image was manually machined, but another
-        was made in a CNC.
+        This is a machined replica of a lightsaber from Star Wars built in an engineering processes class. 
+        The replica in the image was manually machined, but another was made in a CNC.
       </p>
+      <p>
+        This project has an emphasis on tolerances, surface finish, and mastery of various manufacturing techniques. 
+      </p>
+      </>
     ),
     content: (
       <img
