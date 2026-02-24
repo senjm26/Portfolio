@@ -49,7 +49,7 @@ const slides = [
     title: "Toilet Fill Valve",
     description: (
       <p>
-        This is a recreation of a toilet fill valve assembly in Siewmens NX focused on part relationships
+        This is a recreation of a toilet fill valve assembly in Siemens NX focused on part relationships
         and various modeling techniques.
       </p>
     ),

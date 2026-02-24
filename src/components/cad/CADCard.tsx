@@ -12,12 +12,15 @@ export default function CADCard({
   children: ReactNode;
 }) {
   return (
-    <div className="relative bg-white text-black rounded-3xl 
-  p-8 md:p-14 w-full 
-  shadow-2xl border border-black/5
-  min-h-[520px] md:min-h-[560px]"
->
-
+    <div
+      className="
+      relative bg-white text-black rounded-3xl
+      p-8 md:p-14 w-full
+      shadow-2xl border border-black/5
+      h-[620px] md:h-[660px]
+      flex flex-col
+      "
+    >
       {/* Header */}
       <div className="mb-8">
         <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
@@ -26,18 +29,27 @@ export default function CADCard({
         <div className="mt-4 h-[4px] w-full bg-black/80 rounded-full" />
       </div>
 
-      <div className="flex flex-col gap-10 md:grid md:grid-cols-2 md:items-center">
-
+      {/* Content Area */}
+      <div className="flex-1 flex flex-col md:grid md:grid-cols-2 md:items-center gap-10">
+        
         {/* TEXT */}
         <div className="text-base md:text-lg leading-relaxed text-black/70 space-y-5">
           {description}
         </div>
 
         {/* MEDIA */}
-        <div className="flex items-center justify-center w-full rounded-2xl overflow-hidden border border-black/10 bg-black/[0.03] p-6 min-h-[260px]">
+        <div
+          className="
+          flex items-center justify-center
+          w-full rounded-2xl overflow-hidden
+          border border-black/10
+          bg-black/[0.03]
+          p-6
+          h-[320px] md:h-[320px]
+          "
+        >
           {children}
         </div>
-
       </div>
     </div>
   );
