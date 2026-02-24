@@ -229,6 +229,22 @@ export default function CADCarousel() {
     }
   }, [index, slideWidth]);
 
+  /* ---------- Close Modal With ESC ---------- */
+
+useEffect(() => {
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setExpandedImage(null);
+    }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, []);
+
   return (
     <div className="relative w-full flex justify-center items-center pb-16">
 
@@ -245,10 +261,10 @@ export default function CADCarousel() {
       {/* Viewport */}
       <div
         ref={containerRef}
-        className="relative w-full max-w-[1050px] overflow-hidden min-h-[600px] md:min-h-[650px]"
+        className="relative w-full max-w-[1050px] overflow-hidden min-h-[650px] md:min-h-[650px] h-auto"
       >
         <motion.div
-          drag={dragEnabled ? "x" : false}
+          drag={dragEnabled && !expandedImage ? "x" : false}
           dragConstraints={{
             left: -slideWidth * (extendedSlides.length - 1),
             right: 0,
