@@ -5,6 +5,7 @@ import { motion, useMotionValue } from "framer-motion";
 import CADCard from "./CADCard";
 import ArrowButton from "../ui/ArrowButton";
 import ModelSelector from "./ModelSelector";
+import DrawingPreview from "./DrawingPreview";
 
 /* -------------------- SLIDES -------------------- */
 
@@ -59,11 +60,15 @@ const slides = [
       </>
     ),
     content: (
-      <ModelSelector
-        name="Silent Float Assembly"
-        path="/models/silent_float_assy1.glb"
-      />
-    ),
+  <div className="relative w-full flex items-center justify-center">
+
+    <ModelSelector
+      name="Silent Float Assembly"
+      path="/models/silent_float_assy1.glb"
+    />
+
+  </div>
+),
   },
 
   {
@@ -139,6 +144,18 @@ export default function CADCarousel() {
   const [width, setWidth] = useState(0);
   const [dragEnabled, setDragEnabled] = useState(true);
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
+  const [drawingIndex, setDrawingIndex] = useState(0);
+
+  const drawingImages = [
+  "/drawings/silent_float_assy_dwg_p1.png",
+  "/drawings/silent_float_assy_dwg_p2.png",
+  "/drawings/silent_float_assy_dwg_p3.png",
+  "/drawings/silent_float_assy_dwg_p4.png",
+  "/drawings/silent_float_assy_dwg_p5.png",
+  "/drawings/silent_float_assy_dwg_p6.png",
+  "/drawings/silent_float_assy_dwg_p7.png",
+  "/drawings/silent_float_assy_dwg_p8.png",
+];
 
   /* ---------- Measure Width ---------- */
 
@@ -280,27 +297,53 @@ export default function CADCarousel() {
           onPointerLeave={() => setDragEnabled(true)}
         >
           {slide.id === "truss-analysis" ? (
-            <div className="flex flex-col gap-5 items-center">
-              <img
-                src="/images/truss1.png"
-                alt="Truss Analysis 1"
-                className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
-                onClick={() =>
-                  setExpandedImage("/images/truss1.png")
-                }
-              />
-              <img
-                src="/images/truss1.1.png"
-                alt="Truss Analysis 2"
-                className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
-                onClick={() =>
-                  setExpandedImage("/images/truss1.1.png")
-                }
-              />
-            </div>
-          ) : (
-            slide.content
-          )}
+  <div className="flex flex-col gap-5 items-center">
+    <img
+      src="/images/truss1.png"
+      alt="Truss Analysis 1"
+      className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
+      onClick={() =>
+        setExpandedImage("/images/truss1.png")
+      }
+    />
+    <img
+      src="/images/truss1.1.png"
+      alt="Truss Analysis 2"
+      className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
+      onClick={() =>
+        setExpandedImage("/images/truss1.1.png")
+      }
+    />
+  </div>
+) : slide.id === "silent-float" ? (
+  <div className="relative w-full flex items-center justify-center">
+    {slide.content}
+
+    {/* Floating Drawing Badge */}
+    <div
+      className="
+      absolute bottom-4 right-4
+      bg-white/90 backdrop-blur
+      border border-black/10
+      rounded-xl
+      px-3 py-2
+      text-xs font-medium
+      cursor-pointer
+      hover:bg-white
+      transition
+      shadow-lg
+      "
+      onClick={() => {
+        setDrawingIndex(0);
+        setExpandedImage(drawingImages[0]);
+      }}
+    >
+      View Drawing
+    </div>
+  </div>
+) : (
+  slide.content
+)}
         </div>
       )}
     </CADCard>
@@ -339,17 +382,55 @@ export default function CADCarousel() {
 
       {/* Modal */}
       {expandedImage && (
-        <div
-          className="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center z-50 p-6 pl-4 md:pl-0"
-          onClick={() => setExpandedImage(null)}
-        >
-          <img
-            src={expandedImage}
-            alt="Expanded view"
-            className="max-w-full max-h-full rounded-2xl"
-          />
-        </div>
-      )}
+  <div
+    className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50"
+    onClick={() => setExpandedImage(null)}
+  >
+    <div
+      className="relative w-full h-full flex items-center justify-center p-8"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+  className="absolute top-6 right-6 text-white text-3xl"
+  onClick={() => setExpandedImage(null)}
+>
+  ×
+</button>
+      <img
+        src={expandedImage}
+        alt="Drawing"
+        className="max-w-full max-h-full rounded-xl"
+      />
+
+      {/* Left */}
+      <button
+        className="absolute left-6 text-white text-3xl"
+        onClick={() => {
+          const newIndex =
+            (drawingIndex - 1 + drawingImages.length) %
+            drawingImages.length;
+          setDrawingIndex(newIndex);
+          setExpandedImage(drawingImages[newIndex]);
+        }}
+      >
+        ‹
+      </button>
+
+      {/* Right */}
+      <button
+        className="absolute right-6 text-white text-3xl"
+        onClick={() => {
+          const newIndex =
+            (drawingIndex + 1) % drawingImages.length;
+          setDrawingIndex(newIndex);
+          setExpandedImage(drawingImages[newIndex]);
+        }}
+      >
+        ›
+      </button>
+    </div>
+  </div>
+)}
     </div>
   );
 }

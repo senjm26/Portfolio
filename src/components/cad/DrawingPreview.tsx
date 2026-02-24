@@ -3,27 +3,37 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function DrawingPreview() {
+export default function DrawingPreview({
+  file,
+  title,
+}: {
+  file: string;
+  title: string;
+}) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      {/* Preview Card */}
+      {/* Preview Tile */}
       <div
         onClick={() => setOpen(true)}
-        style={{
-          cursor: "pointer",
-          padding: "16px",
-          borderRadius: "12px",
-          border: "1px solid #e5e5e5",
-          background: "#fafafa",
-        }}
+        className="
+        cursor-pointer
+        w-full
+        rounded-2xl
+        border border-black/10
+        bg-black/[0.03]
+        p-6
+        text-center
+        transition
+        hover:bg-black/[0.06]
+        "
       >
-        <h3 style={{ marginBottom: "8px" }}>
-          Manufacturing Drawing (GD&T)
-        </h3>
-        <p style={{ fontSize: "0.9rem", opacity: 0.7 }}>
-          Click to view full drawing
+        <h4 className="text-base md:text-lg font-medium">
+          {title}
+        </h4>
+        <p className="text-sm text-black/60 mt-2">
+          Click to expand drawing
         </p>
       </div>
 
@@ -34,39 +44,32 @@ export default function DrawingPreview() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(0,0,0,0.8)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 1000,
-            }}
+            className="
+            fixed inset-0
+            bg-black/80 backdrop-blur-md
+            flex items-center justify-center
+            z-50 p-6
+            "
             onClick={() => setOpen(false)}
           >
             <motion.div
-              initial={{ scale: 0.9 }}
+              initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
+              exit={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              style={{
-                width: "90%",
-                height: "90%",
-                background: "white",
-                borderRadius: "12px",
-                overflow: "hidden",
-              }}
+              className="
+              w-full max-w-6xl
+              h-[90vh]
+              bg-white
+              rounded-2xl
+              overflow-hidden
+              shadow-2xl
+              "
               onClick={(e) => e.stopPropagation()}
             >
               <iframe
-                src="/drawings/silent_float_assy_dwg.pdf"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  border: "none",
-                }}
+                src={file}
+                className="w-full h-full"
               />
             </motion.div>
           </motion.div>
