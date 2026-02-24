@@ -45,7 +45,8 @@ export default function CADCard({
           border border-black/10
           bg-black/[0.03]
           p-6
-          h-[320px] md:h-[440px]
+          min-h-[360px] md:h-[440px]
+          h-auto
           "
         >
           {children}
