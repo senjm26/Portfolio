@@ -39,18 +39,17 @@ export default function CADCard({
 
         {/* MEDIA */}
         <div
-          className="
-          flex items-center justify-center
-          w-full rounded-2xl overflow-hidden
-          border border-black/10
-          bg-black/[0.03]
-          p-6
-          min-h-[360px] md:h-[440px]
-          h-auto
-          "
-        >
-          {children}
-        </div>
+  className="
+  w-full rounded-2xl
+  border border-black/10
+  bg-black/[0.03]
+  h-[320px] md:h-[440px]
+  "
+>
+  <div className="relative w-full h-full p-6 overflow-hidden flex items-center justify-center">
+    {children}
+  </div>
+</div>
       </div>
     </div>
   );
