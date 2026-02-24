@@ -63,7 +63,7 @@ export default function Education() {
               className="relative pl-16"
             >
               {/* Dot */}
-              <div className="absolute left-[18px] top-10 w-4 h-4 rounded-full bg-black border-4 border-white z-10" />
+              <div className="absolute left-[16.5px] top-10 w-4 h-4 rounded-full bg-black border-4 border-white z-10" />
 
               {/* Card */}
               <div className="border border-black/10 rounded-2xl p-8 hover:shadow-md transition bg-white">

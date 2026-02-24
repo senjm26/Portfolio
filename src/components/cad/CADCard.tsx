@@ -12,7 +12,11 @@ export default function CADCard({
   children: ReactNode;
 }) {
   return (
-    <div className="relative bg-white text-black rounded-3xl p-8 md:p-14 w-full shadow-2xl border border-black/5">
+    <div className="relative bg-white text-black rounded-3xl 
+  p-8 md:p-14 w-full 
+  shadow-2xl border border-black/5
+  min-h-[520px] md:min-h-[560px]"
+>
 
       {/* Header */}
       <div className="mb-8">

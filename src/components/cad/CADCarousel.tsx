@@ -205,10 +205,10 @@ export default function CADCarousel() {
         ({(index % baseLength) + 1} / {baseLength})
       </div>
 
-      {/* Left Arrow */}
+      {/* Left Arrow 
       <div className="absolute left-3 md:left-[6%] top-[52%] md:top-1/2 md:-translate-y-1/2 z-20">
         <ArrowButton direction="left" onClick={() => goTo(index - 1)} />
-      </div>
+      </div>*/}
 
       {/* Viewport */}
       <div
@@ -246,58 +246,81 @@ export default function CADCarousel() {
                 className="translate-x-2 md:translate-x-0"
               >
                 <motion.div
-                  animate={{
-                    scale: isActive ? 1 : 0.96,
-                    opacity: isActive ? 1 : 0.75,
-                  }}
-                  transition={{ duration: 0.3 }}
-                  style={{ width: "100%" }}
-                >
-                  <CADCard
-                    title={slide.title}
-                    description={slide.description}
-                  >
-                    {isActive && (
-                      <div
-                        onPointerEnter={() => setDragEnabled(false)}
-                        onPointerLeave={() => setDragEnabled(true)}
-                      >
-                        {slide.id === "truss-analysis" ? (
-                          <div className="flex flex-col gap-5 items-center">
-                            <img
-                              src="/images/truss1.png"
-                              alt="Truss Analysis 1"
-                              className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
-                              onClick={() =>
-                                setExpandedImage("/images/truss1.png")
-                              }
-                            />
-                            <img
-                              src="/images/truss1.1.png"
-                              alt="Truss Analysis 2"
-                              className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
-                              onClick={() =>
-                                setExpandedImage("/images/truss1.1.png")
-                              }
-                            />
-                          </div>
-                        ) : (
-                          slide.content
-                        )}
-                      </div>
-                    )}
-                  </CADCard>
-                </motion.div>
+  animate={{
+    scale: isActive ? 1 : 0.96,
+    opacity: isActive ? 1 : 0.75,
+  }}
+  transition={{ duration: 0.3 }}
+  style={{ width: "100%" }}
+>
+  <div className="relative">
+
+    <CADCard
+      title={slide.title}
+      description={slide.description}
+    >
+      {isActive && (
+        <div
+          onPointerEnter={() => setDragEnabled(false)}
+          onPointerLeave={() => setDragEnabled(true)}
+        >
+          {slide.id === "truss-analysis" ? (
+            <div className="flex flex-col gap-5 items-center">
+              <img
+                src="/images/truss1.png"
+                alt="Truss Analysis 1"
+                className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
+                onClick={() =>
+                  setExpandedImage("/images/truss1.png")
+                }
+              />
+              <img
+                src="/images/truss1.1.png"
+                alt="Truss Analysis 2"
+                className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
+                onClick={() =>
+                  setExpandedImage("/images/truss1.1.png")
+                }
+              />
+            </div>
+          ) : (
+            slide.content
+          )}
+        </div>
+      )}
+    </CADCard>
+
+    {/* Arrows anchored to card */}
+    {isActive && (
+      <>
+        <div className="absolute bottom-6 left-6 z-30">
+          <ArrowButton
+            direction="left"
+            onClick={() => goTo(index - 1)}
+          />
+        </div>
+
+        <div className="absolute bottom-6 right-6 z-30">
+          <ArrowButton
+            direction="right"
+            onClick={() => goTo(index + 1)}
+          />
+        </div>
+      </>
+    )}
+
+  </div>
+</motion.div>
               </div>
             );
           })}
         </motion.div>
       </div>
 
-      {/* Right Arrow */}
+      {/* Right Arrow 
       <div className="absolute right-3 md:right-[6%] top-[52%] md:top-1/2 md:-translate-y-1/2 z-20">
         <ArrowButton direction="right" onClick={() => goTo(index + 1)} />
-      </div>
+      </div>*/}
 
       {/* Modal */}
       {expandedImage && (
