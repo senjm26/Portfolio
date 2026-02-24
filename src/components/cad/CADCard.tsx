@@ -17,7 +17,7 @@ export default function CADCard({
       relative bg-white text-black rounded-3xl
       p-8 md:p-14 w-full
       shadow-2xl border border-black/5
-      h-[620px] md:h-[660px]
+      h-[960px] md:h-[700px]
       flex flex-col
       "
     >
@@ -45,7 +45,7 @@ export default function CADCard({
           border border-black/10
           bg-black/[0.03]
           p-6
-          h-[320px] md:h-[320px]
+          h-[320px] md:h-[440px]
           "
         >
           {children}
