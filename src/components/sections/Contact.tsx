@@ -35,15 +35,14 @@ export default function Contact() {
             Let’s build something exceptional.
           </h2>
 
-          <p className="text-black/70 leading-relaxed mb-12 max-w-md">
+          <p className="text-black/70 leading-relaxed mb-12 max-w-120">
             Open to engineering opportunities, internships, 
-            and design-driven projects where precision and 
-            execution matter.
+            and design projects.
           </p>
 
           <div className="space-y-3 text-black/60 text-sm">
             <p>Pennsylvania, United States</p>
-            <p>your.email@example.com</p>
+            <p>senjm26@gmail.com</p>
           </div>
 
           <div className="mt-10 flex items-center gap-8">

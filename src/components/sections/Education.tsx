@@ -7,6 +7,7 @@ export default function Education() {
       highlights: [
         "GPA: 3.62",
         "Rensselaer Medalist",
+        "Sophmore Standing",
       ],
       coursework: [
         "Calculus I–III",
