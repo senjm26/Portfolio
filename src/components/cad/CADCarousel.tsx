@@ -304,65 +304,93 @@ useEffect(() => {
   <div className="relative">
 
     <CADCard
-      title={slide.title}
-      description={slide.description}
-    >
-      {isActive && (
-        <div
-          onPointerEnter={() => setDragEnabled(false)}
-          onPointerLeave={() => setDragEnabled(true)}
-        >
-          {slide.id === "truss-analysis" ? (
-  <div className="flex flex-col gap-5 items-center">
-    <img
-      src="/images/truss1.png"
-      alt="Truss Analysis 1"
-      className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
-      onClick={() =>
-        setExpandedImage("/images/truss1.png")
-      }
-    />
-    <img
-      src="/images/truss1.1.png"
-      alt="Truss Analysis 2"
-      className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
-      onClick={() =>
-        setExpandedImage("/images/truss1.1.png")
-      }
-    />
-  </div>
-) : slide.id === "silent-float" ? (
-  <div className="relative mx-auto w-fit max-w-full">
-    {slide.content}
-
-    {/* Floating Drawing Badge */}
+  title={slide.title}
+  description={slide.description}
+>
+  {isActive && (
     <div
-      className="
-      absolute bottom-4 right-4
-      bg-white/90 backdrop-blur
-      border border-black/10
-      rounded-xl
-      px-3 py-2
-      text-xs font-medium
-      cursor-pointer
-      hover:bg-white
-      transition
-      shadow-lg
-      "
-      onClick={() => {
-        setDrawingIndex(0);
-        setExpandedImage(drawingImages[0]);
-      }}
+      className="relative"
+      onPointerEnter={() => setDragEnabled(false)}
+      onPointerLeave={() => setDragEnabled(true)}
     >
-      View Drawing
+      {slide.id === "truss-analysis" ? (
+        <div className="flex flex-col gap-5 items-center">
+          <img
+            src="/images/truss1.png"
+            alt="Truss Analysis 1"
+            className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
+            onClick={() =>
+              setExpandedImage("/images/truss1.png")
+            }
+          />
+          <img
+            src="/images/truss1.1.png"
+            alt="Truss Analysis 2"
+            className="cursor-zoom-in w-full max-w-[650px] rounded-xl"
+            onClick={() =>
+              setExpandedImage("/images/truss1.1.png")
+            }
+          />
+        </div>
+      ) : slide.id === "silent-float" ? (
+        <>
+          {slide.content}
+
+          <div
+            className="
+              absolute bottom-6 right-6
+              bg-white
+              border border-black/10
+              rounded-xl
+              px-4 py-2
+              text-sm font-medium
+              text-black
+              cursor-pointer
+              hover:bg-gray-100
+              transition
+              shadow-md
+            "
+            onClick={() => {
+              setDrawingIndex(0);
+              setExpandedImage(drawingImages[0]);
+            }}
+          >
+            View Drawing
+          </div>
+        </>
+      ) : (
+        slide.content
+      )}
+    </div>
+  )}
+</CADCard>
+
+{/* {isActive && slide.id === "silent-float" && (
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute right-[8%] bottom-10 pointer-events-auto">
+      <div
+        className="
+        bg-white/95
+        border border-black/10
+        rounded-xl
+        px-4 py-2
+        text-sm font-medium
+        cursor-pointer
+        hover:bg-white
+        transition
+        shadow-md
+        "
+        onClick={() => {
+          setDrawingIndex(0);
+          setExpandedImage(drawingImages[0]);
+        }}
+      >
+        View Drawing
+      </div>
     </div>
   </div>
-) : (
-  slide.content
 )}
-        </div>
-      )}
-    </CADCard>
+  */}
 
     {/* Arrows anchored to card */}
     {isActive && (

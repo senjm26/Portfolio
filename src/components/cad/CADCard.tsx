@@ -46,9 +46,9 @@ export default function CADCard({
   h-[320px] md:h-[440px]
   "
 >
-  <div className="relative w-full h-full p-6 overflow-hidden flex items-center justify-center">
-    {children}
-  </div>
+  <div className="flex items-center justify-center w-full rounded-2xl overflow-hidden border border-black/10 bg-black/[0.03] p-6 h-[320px] md:h-[440px] relative">
+  {children}
+</div>
 </div>
       </div>
     </div>
