@@ -27,7 +27,7 @@ export default function Skills() {
       icon: <MonitorCog size={18} strokeWidth={1.8} />,
       skills: [
         "Google Workspace",
-        "Microsoft Office",
+        "Microsoft Suite",
         "Python",
         "TypeScript",
       ],
