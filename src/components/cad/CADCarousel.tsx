@@ -332,7 +332,7 @@ useEffect(() => {
     />
   </div>
 ) : slide.id === "silent-float" ? (
-  <div className="relative inline-block">
+  <div className="relative mx-auto w-fit max-w-full">
     {slide.content}
 
     {/* Floating Drawing Badge */}

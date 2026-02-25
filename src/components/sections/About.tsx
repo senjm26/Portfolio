@@ -42,8 +42,8 @@ export default function About() {
 
           <p className="text-lg leading-relaxed text-black/80">
             I am a mechanical engineering student focused on CAD design,
-            finite element analysis, and manufacturing. My work
-            emphasizes precision, efficiency, and execution.
+            finite element analysis, and manufacturing. I love the process of designing a purposeful, usable product,
+            and I am especially interested in manufacturing it to become a real product.
           </p>
 
           <p className="mt-8 text-lg leading-relaxed text-black/70">
