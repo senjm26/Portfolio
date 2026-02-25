@@ -23,12 +23,13 @@ export default function Skills() {
       ],
     },
     {
-      title: "Technical & Tools",
+      title: "Technical Tools",
       icon: <MonitorCog size={18} strokeWidth={1.8} />,
       skills: [
         "Google Workspace",
         "Microsoft Office",
-        "Systems Troubleshooting",
+        "Python",
+        "TypeScript",
       ],
     },
   ];
