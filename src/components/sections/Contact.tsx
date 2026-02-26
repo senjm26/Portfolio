@@ -35,8 +35,8 @@ export default function Contact() {
             Let’s build something exceptional.
           </h2>
 
-          <p className="text-black/70 leading-relaxed mb-12 max-w-120">
-            Open to engineering opportunities, internships, 
+          <p className="text-black/70 leading-relaxed mb-12 max-w-150">
+            I am open to engineering opportunities, internships, 
             and design projects.
           </p>
 
