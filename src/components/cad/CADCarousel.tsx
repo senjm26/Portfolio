@@ -87,7 +87,7 @@ const slides = [
     content: (
       <ModelSelector
         name="Box"
-        path="/models/box_assy.glb"
+        path="/models/box_assy1.glb"
       />
     ),
   },
