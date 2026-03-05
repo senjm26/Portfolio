@@ -95,12 +95,14 @@ export default function Hero() {
           className="mt-14 flex justify-center gap-6 flex-wrap"
         >
           <a
-            href="/resume.pdf"
-            className="px-8 py-3 border border-white/30 text-white tracking-wide text-sm uppercase rounded-md hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3"
-          >
-            <FileDown size={16} />
-            Resume
-          </a>
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-8 py-3 border border-white/30 text-white tracking-wide text-sm uppercase rounded-md hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3"
+>
+  <FileDown size={16} />
+  Resume
+</a>
 
           <a
             href="https://www.linkedin.com/in/jaymsen/"

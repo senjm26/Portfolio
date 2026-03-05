@@ -100,8 +100,9 @@ const slides = [
       <p>
         This study is a structural optimization project using SolidWorks Simulation.
       </p>
-      <p>In Rensselaer Motorsport, I increased rear wing truss FOS by 1.4
-        through geometry refinement and stress redistribution. This work aided aero development for the 25-26 car.</p>
+      <p>I increased this rear wing truss FOS by 1.4
+        through geometry refinement and stress redistribution. This work aided aero development for Rensselaer
+        Motorsport's '25-26 car.</p>
       </>
     ),
     content: "TRUSS_CONTENT",

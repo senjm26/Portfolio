@@ -49,6 +49,7 @@ export default function Contact() {
             <a
               href="/resume.pdf"
               target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm font-medium hover:opacity-70 transition"
             >
               <FileDown size={18} />

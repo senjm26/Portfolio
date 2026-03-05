@@ -16,9 +16,10 @@ export default function Skills() {
       title: "Manufacturing",
       icon: <Wrench size={18} strokeWidth={1.8} />,
       skills: [
+        "Manual Machining",
         "Mastercam",
         "CNC Machining",
-        "Manual Machining",
+        "Welding",
         "Product Development & Launch",
       ],
     },

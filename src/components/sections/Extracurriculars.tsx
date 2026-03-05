@@ -26,6 +26,7 @@ export default function Extracurriculars() {
         "Engineering research: fighter jets & racecars",
         "Top 1% in Clash Royale",
         "Photography",
+        "Website Design",
       ],
     },
   ];
