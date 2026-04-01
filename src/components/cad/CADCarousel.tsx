@@ -124,7 +124,7 @@ const slides = [
     ),
     content: (
       <img
-        src="/images/lightsaber.jpg"
+        src="/images/lightsaber.jpeg"
         alt="Lightsaber"
         className="w-full max-w-[650px] rounded-xl object-contain"
       />

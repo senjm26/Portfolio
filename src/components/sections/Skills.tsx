@@ -20,6 +20,7 @@ export default function Skills() {
         "Mastercam",
         "CNC Machining",
         "Welding",
+        "Brazing",
         "Product Development & Launch",
       ],
     },
