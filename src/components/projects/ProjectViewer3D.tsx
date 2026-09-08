@@ -14,7 +14,7 @@ export default function ProjectViewer3D({
 }) {
   return (
     <div
-      className={`grid gap-4 w-full h-full min-h-[320px] ${
+      className={`grid gap-4 w-full h-full ${
         explodedModelPath ? "md:grid-cols-2" : "grid-cols-1"
       }`}
     >

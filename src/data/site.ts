@@ -16,7 +16,7 @@ export const siteConfig: SiteConfig = {
   monogram: "Jay Sen",
   discipline: "Mechanical Engineering Student",
   location: "Pennsylvania, United States",
-  email: "senjm@gmail.com",
+  email: "senjm26@gmail.com",
   resumeHref: "/resume.pdf",
   linkedinUrl: "https://linkedin.com/in/jaymsen",
 };

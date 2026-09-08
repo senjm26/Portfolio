@@ -76,7 +76,7 @@ export default function ProjectModal({
           {/* Media */}
           <div className="mt-8 w-full">
             {project.modelPath ? (
-              <div className="w-full h-[280px] md:h-[380px]">
+              <div className="w-full h-[280px] md:h-[380px] overflow-hidden rounded-md">
                 <ProjectViewer3D
                   modelPath={project.modelPath}
                   explodedModelPath={project.explodedModelPath}
