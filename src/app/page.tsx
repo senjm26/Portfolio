@@ -3,8 +3,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Education from "@/components/sections/Education";
 import Experience from "@/components/sections/Experience";
-import CADSection from "@/components/cad/CADSection";
-import Skills from "@/components/sections/Skills";
+import ProjectGrid from "@/components/projects/ProjectGrid";
 import Extracurriculars from "@/components/sections/Extracurriculars";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
@@ -15,9 +14,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <CADSection />
+      <ProjectGrid />
       <Experience />
-      <Skills />
       <Education />
       <Extracurriculars />
       <Contact />

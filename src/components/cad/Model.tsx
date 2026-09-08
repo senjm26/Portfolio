@@ -7,9 +7,10 @@ import { useThree } from "@react-three/fiber";
 
 type ModelProps = {
   path: string;
+  margin?: number;
 };
 
-export default function Model({ path }: ModelProps) {
+export default function Model({ path, margin = 1.2 }: ModelProps) {
   const { scene } = useGLTF(path);
   const { camera } = useThree();
 
@@ -39,7 +40,7 @@ const heightDistance = size.y / (2 * Math.tan(fov / 2));
 const widthDistance = size.x / (2 * Math.tan(fov / 2)) / aspect;
 
 // Use the larger of the two
-const distance = Math.max(heightDistance, widthDistance) * 1.2;
+const distance = Math.max(heightDistance, widthDistance) * margin;
 
 cam.position.set(distance, distance * 0.6, distance);
 cam.near = distance / 100;
@@ -54,7 +55,7 @@ cam.updateProjectionMatrix();
         mesh.geometry.computeVertexNormals();
       }
     });
-  }, [scene, camera]);
+  }, [scene, camera, margin]);
 
   return <primitive object={scene} />;
 }

@@ -1,30 +1,42 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Eyebrow from "../ui/Eyebrow";
+
 export default function Extracurriculars() {
   const activities = [
     {
-      title: "Eagle Scout",
+      title: "Cello Performance",
       items: [
-        "Eagle Project: Designed and built a 10×3 ft trail bridge",
-        "Senior Patrol Leader (Feb 2023 – Jun 2025)",
-        "Patrol Leader (Feb 2022 – Feb 2023)",
-        "12+ years of Scouting",
-        "6 High Adventure Trips",
-        "34 Merit Badges Earned",
+        "Rana's Music Studio — 14+ years of private and group lessons and performances",
+        "Rensselaer Orchestra member; Lead Cello Ensemblist",
+        "Performed in local nursing homes, malls, and seasonal recitals",
+        "PMEA Region 1 Finalist (2019)",
+        "Pittsburgh Symphony Orchestra Side-by-Side Alternate Cellist",
+        "Principal Cellist — Gateway High School Orchestra performance at Disney Springs, Lake Buena Vista, FL",
       ],
     },
     {
-      title: "Cello Performance",
+      title: "Eagle Scout",
       items: [
-        "14+ years of performance experience",
-        "PMEA Region 1 Finalist (2019)",
-        "Pittsburgh Symphony Orchestra Side-by-Side Alternate Cellist",
-        "Principal Cellist — Gateway HS Orchestra (Disney Springs Performance)",
+        "12+ years of Scouting experience; 34 Merit Badges earned",
+        "Eagle Project: designed and built a 10×3 ft trail bridge in Boyce Park, Monroeville, PA, used by hikers, mountain bikers, and horse riders",
+        "Senior Patrol Leader (Feb 2023 – Jun 2025), Patrol Leader (Feb 2022 – Feb 2023) — led Troop 220 to 3rd place in the 2025 Klondike for Lackawanna District",
+        "Eagle Scout project featured in Allegheny County Parks Foundation's June 2025 newsletter",
+      ],
+    },
+    {
+      title: "Volunteering",
+      items: [
+        "50+ hours of community service with Boy Scouts of America — cleanups in Monroeville and Pitcairn, PA; trail maintenance in Boyce Park; campsite work at Laurel Highlands",
+        "National Honor Society (Gateway Senior High School) — packed 170+ food bags weekly and distributed food monthly to 600+ families",
+        "Interact Club — Holiday Brunch at Forbes Hospital, Monroeville Park Cleanup, and Rotary Club events",
       ],
     },
     {
       title: "Hobbies & Interests",
       items: [
-        "Engineering research: fighter jets & racecars",
-        "Top 1% in Clash Royale",
+        "Engineering research: combustion engines and aspirations, racecar aero package design, and rocket engines ",
         "Photography",
         "Website Design",
       ],
@@ -32,39 +44,40 @@ export default function Extracurriculars() {
   ];
 
   return (
-    <section
-      id="extracurriculars"
-      className="relative py-32 px-6 bg-neutral-50 text-black border-t border-black/10"
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-20">
-          <p className="text-md tracking-[0.35em] uppercase text-black/80 mb-8">
-            Beyond Engineering
-          </p>
-          
-        </div>
+    <section id="extracurriculars" className="relative py-32 px-6 bg-cream-raised text-ink">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <Eyebrow>Beyond Engineering</Eyebrow>
+        </motion.div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-10">
-          {activities.map((activity, index) => (
-            <div
-              key={index}
-              className="border border-black/10 rounded-2xl p-8 hover:shadow-md transition"
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {activities.map((activity, idx) => (
+            <motion.div
+              key={activity.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="border border-ink/10 rounded-md p-8 hover:border-sky/50 hover:shadow-lg hover:shadow-ink/5 transition-all duration-300 bg-cream"
             >
-              <h3 className="text-2xl font-semibold mb-6">
+              <h3 className="font-display text-xl mb-6 text-ink">
                 {activity.title}
               </h3>
 
               <ul className="space-y-4 list-none pl-0">
                 {activity.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-black/70">
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-black shrink-0" />
+                  <li key={i} className="flex items-start gap-3 text-ink/70">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

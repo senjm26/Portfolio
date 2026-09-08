@@ -4,9 +4,15 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./Model";
 
-export default function CADViewer({ modelPath }: { modelPath: string }) {
+export default function CADViewer({
+  modelPath,
+  cameraMargin,
+}: {
+  modelPath: string;
+  cameraMargin?: number;
+}) {
   return (
-    <div className="w-full h-full bg-[#f1f1f1] rounded-xl shadow-inner overflow-hidden">
+    <div className="w-full h-full bg-[#dcd9d2] rounded-xl shadow-inner overflow-hidden">
   <div className="w-full h-full p-3">
       <Canvas
       style={{ width: "100%", height: "100%" }}
@@ -33,7 +39,7 @@ export default function CADViewer({ modelPath }: { modelPath: string }) {
         <directionalLight position={[-5, -3, 5]} intensity={0.4} />
         <directionalLight position={[0, 5, -10]} intensity={0.3} />
 
-        <Model path={modelPath} />
+        <Model path={modelPath} margin={cameraMargin} />
 
         <OrbitControls
           enableDamping
