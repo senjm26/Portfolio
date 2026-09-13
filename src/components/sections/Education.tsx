@@ -38,7 +38,7 @@ export default function Education() {
       degree: "High School Diploma",
       highlights: [
         "GPA: 3.81",
-        "Rank: 5 / 289",
+        "Rank: 6 / 289",
         "Distinguished Honor Roll",
         "National Honor Society",
         "AP Scholar",
