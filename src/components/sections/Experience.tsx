@@ -8,6 +8,7 @@ export default function ExperienceSection() {
     {
       title: "Production Engineering Intern — Cleaveland/Price Inc.",
       date: "May 2026 – Aug 2026",
+      location:"Trafford, PA",
       bullets: [
         "Conducted detailed time studies of machining operations across the manufacturing floor, capturing cycle times, setup times, and process variables to inform facility planning and equipment layout",
         "Audited job times against work orders to uncover discrepancies and identify opportunities for process improvement and cost savings",
