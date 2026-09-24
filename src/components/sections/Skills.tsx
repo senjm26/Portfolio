@@ -18,9 +18,8 @@ export default function Skills() {
       skills: [
         "Manual Machining",
         "Mastercam",
-        "CNC Machining",
         "Welding",
-        "Brazing",
+        "Lean Manufacturing",
         "Product Development & Launch",
       ],
     },
@@ -28,10 +27,10 @@ export default function Skills() {
       title: "Technical Tools",
       icon: <MonitorCog size={18} strokeWidth={1.8} />,
       skills: [
+        "Python",
         "Google Workspace",
         "Microsoft Suite",
-        "Python",
-        "TypeScript",
+        "Customer Service",
       ],
     },
   ];
