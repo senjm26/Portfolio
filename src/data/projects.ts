@@ -101,6 +101,21 @@ export const projects: Project[] = [
     ],
   },
 
+  {
+    id: "multi-element-wing",
+    title: "Multi-Element Wing Aero Package",
+    category: "aerodynamics",
+    categoryLabel: "Aerodynamics",
+    tools: ["SolidWorks", "Star-CCM+", "Simcenter HEEDS"],
+    partType: "Aero Package",
+    timeframe: "2025–Present",
+    description: [
+      "Leading a 5-person aerodynamics sub-team at Rensselaer Motorsport (FSAE) to design and optimize a multi-element front/rear wing for the team's upcoming car.",
+      "Scope spans CFD-driven element shaping and optimization, structural integration with the rear wing truss, and manufacturing of the carbon fiber aero components.",
+      "Cover image is pending — the real CFD render will go here once it's ready.",
+    ],
+  },
+
   // -- Add new projects below. Copy the shape below, then edit. --
   // {
   //   id: "unique-slug",

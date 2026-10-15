@@ -13,8 +13,9 @@ const skillGroups = [
       "Siemens NX",
       "SolidWorks",
       "SolidWorks Simulation",
-      "Computer-Aided Design (CAD)",
-      "Finite Element Analysis (FEA)",
+      "Ansys Mechanical",
+      "Star-CCM+",
+      "Simcenter HEEDS",
       "GD&T",
     ],
   },
@@ -23,10 +24,10 @@ const skillGroups = [
     icon: <Wrench size={16} strokeWidth={1.8} />,
     skills: [
       "Manual Machining",
-      "CNC Machining",
       "Mastercam",
       "Welding",
-      "Brazing",
+      "Carbon Fiber",
+      "3D Printing",
       "Lean Manufacturing",
       "Product Development & Launch",
     ],
@@ -34,7 +35,12 @@ const skillGroups = [
   {
     title: "Technical Tools",
     icon: <MonitorCog size={16} strokeWidth={1.8} />,
-    skills: ["Google Workspace", "Microsoft Office", "Python", "TypeScript"],
+    skills: [
+      "Python",
+      "Artificial Intelligence (AI)",
+      "Google Workspace",
+      "Microsoft Office",
+    ],
   },
   {
     title: "Professional Skills",
@@ -43,9 +49,9 @@ const skillGroups = [
       "Leadership",
       "Public Speaking",
       "Customer Service",
+      "Personal Care Services",
       "Communication",
       "Teamwork",
-      "Personal Care Services",
     ],
   },
 ];
@@ -74,7 +80,7 @@ export default function About() {
             {...fadeUp}
             className="flex justify-center md:justify-start"
           >
-            <div className="relative w-72 h-72 md:w-80 md:h-80 group">
+            <div className="relative w-80 h-80 md:w-[28rem] md:h-[28rem] group">
               <div className="absolute inset-0 rounded-full border border-sky/50 transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-3 rounded-full overflow-hidden border border-ink/10">
                 <img
@@ -93,17 +99,20 @@ export default function About() {
               real world problems through design, testing, and building.
               Whether it is a personal project or a team build, I like
               turning ideas into feasible, purposeful solutions. My focus
-              areas are CAD design, finite element analysis, and
-              manufacturing, and I am especially interested in seeing a
+              areas are CAD design, finite element analysis and simulation,
+              and manufacturing, and I am especially interested in seeing a
               design through to a real, manufactured product.
             </p>
 
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              I am currently growing my engineering skills through
-              Rensselaer Motorsport (FSAE), expanding my experience with
-              design and manufacturing, and looking for internships where I
-              can contribute while continuing to learn, particularly in
-              mechanical design, CAD, prototyping, and manufacturing.
+              I recently completed a Production Engineering Internship at
+              Cleaveland/Price Inc., where I ran 180+ time studies and built
+              tools and templates to standardize data collection across the
+              shop floor. I am continuing to grow as an engineer and leader
+              through Rensselaer Motorsport (FSAE), where I lead a 5-person
+              aerodynamics sub-team developing a multi-element wing design,
+              and through my role as Director of IT at Sen Engineering
+              Solutions.
             </p>
 
             <p className="mt-6 text-lg leading-relaxed text-ink/70">

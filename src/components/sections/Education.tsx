@@ -9,7 +9,7 @@ export default function Education() {
       school: "Rensselaer Polytechnic Institute",
       location: "Troy, NY",
       degree: "B.S. Mechanical Engineering",
-      highlights: ["GPA: 3.5", "Rensselaer Medalist", "Expected May 2028"],
+      highlights: ["GPA: 3.5", "Rensselaer Medalist", "Expected December 2028"],
       coursework: [
         "Solid Mechanics",
         "Numerical Programming",

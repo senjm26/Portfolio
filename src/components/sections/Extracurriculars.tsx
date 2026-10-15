@@ -21,7 +21,7 @@ export default function Extracurriculars() {
       items: [
         "12+ years of Scouting experience; 34 Merit Badges earned",
         "Eagle Project: designed and built a 10×3 ft trail bridge in Boyce Park, Monroeville, PA, used by hikers, mountain bikers, and horse riders",
-        "Senior Patrol Leader (Feb 2023 – Jun 2025), Patrol Leader (Feb 2022 – Feb 2023) — led Troop 220 to 3rd place in the 2025 Klondike for Lackawanna District",
+        "Senior Patrol Leader (Feb 2023 – Jun 2025), Patrol Leader (Feb 2022 – Feb 2023) — led Troop 220 to 3rd place in the 2024 Lackawanna District Klondike Derby",
         "Eagle Scout project featured in Allegheny County Parks Foundation's June 2025 newsletter",
       ],
     },
