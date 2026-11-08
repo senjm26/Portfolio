@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Eyebrow from "../ui/Eyebrow";
+import WeldTimeline from "../ui/WeldTimeline";
 
 export default function ExperienceSection() {
   const experiences = [
     {
-      title: "Production Engineering Intern — Cleaveland/Price Inc.",
+      title: "Production Engineering Intern - Cleaveland/Price Inc.",
       date: "May 2026 – Aug 2026",
       location:"Trafford, PA",
       bullets: [
@@ -20,7 +21,7 @@ export default function ExperienceSection() {
       tags: ["Lean Manufacturing", "Process Improvement", "Automation"],
     },
     {
-      title: "Full Member — Rensselaer Motorsport (FSAE)",
+      title: "Full Member - Rensselaer Motorsport (FSAE)",
       date: "Aug 2025 – Present",
       location: "Troy, NY",
       bullets: [
@@ -32,7 +33,7 @@ export default function ExperienceSection() {
       tags: ["SolidWorks", "SolidWorks Simulation", "Manufacturing"],
     },
     {
-      title: "Director of IT — Sen Engineering Solutions",
+      title: "Director of IT - Sen Engineering Solutions",
       date: "Jun 2024 – Present",
       location: "Pittsburgh, PA",
       bullets: [
@@ -43,7 +44,7 @@ export default function ExperienceSection() {
       tags: ["Next.js", "IT Systems", "Leadership"],
     },
     {
-      title: "Dining Room Server — Juniper Communities",
+      title: "Dining Room Server - Juniper Communities",
       date: "Feb 2024 – Aug 2025",
       location: "Monroeville, PA",
       bullets: [
@@ -59,7 +60,7 @@ export default function ExperienceSection() {
 
   return (
     <section id="experience" className="bg-cream-raised text-ink py-32 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +71,7 @@ export default function ExperienceSection() {
         </motion.div>
 
         {/* Timeline Wrapper */}
-        <div className="space-y-10 mt-16">
+        <WeldTimeline className="space-y-10 mt-16">
           {experiences.map((exp, idx) => (
             <motion.div
               key={exp.title}
@@ -80,16 +81,8 @@ export default function ExperienceSection() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="relative pl-8 md:pl-16"
             >
-              {/* Connector to next dot (only between items, never trailing past the last) */}
-              {idx < experiences.length - 1 && (
-                <div className="absolute left-3 md:left-6 -translate-x-1/2 top-10 h-[calc(100%+2.5rem)] w-px bg-ink/15" />
-              )}
-
-              {/* Dot */}
-              <div className="absolute left-3 md:left-6 -translate-x-1/2 top-10 w-3 h-3 rounded-full bg-sky border-4 border-cream-raised z-10" />
-
               {/* Card */}
-              <div className="group border border-ink/10 rounded-md p-5 md:p-8 hover:border-sky/50 hover:shadow-lg hover:shadow-ink/5 transition-all duration-300 bg-cream">
+              <div className="group border border-ink/10 rounded-md p-5 md:p-8 hover:border-accent/50 hover:shadow-lg hover:shadow-ink/5 transition-all duration-300 bg-cream">
                 <div className="grid md:grid-cols-[1fr_auto] gap-4 md:gap-8">
                   {/* LEFT SIDE */}
                   <div>
@@ -103,7 +96,7 @@ export default function ExperienceSection() {
                           key={`${exp.title}-bullet-${i}`}
                           className="flex items-start gap-3 text-ink/70"
                         >
-                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky shrink-0" />
+                          <span className="mt-2 h-1.5 w-1.5 bg-accent shrink-0" />
                           <span>{point}</span>
                         </li>
                       ))}
@@ -113,7 +106,7 @@ export default function ExperienceSection() {
                       {exp.tags.map((tag, i) => (
                         <span
                           key={`${exp.title}-tag-${i}`}
-                          className="font-mono text-xs px-3 py-1 rounded-sm border border-ink/15 text-ink/60 transition-colors group-hover:border-sky/30"
+                          className="font-mono text-xs px-3 py-1 rounded-sm border border-ink/15 text-ink/60 transition-colors group-hover:border-accent/30"
                         >
                           {tag}
                         </span>
@@ -121,7 +114,7 @@ export default function ExperienceSection() {
                     </div>
                   </div>
 
-                  {/* RIGHT SIDE — Details */}
+                  {/* RIGHT SIDE - Details */}
                   <div className="font-mono text-xs text-ink/50 md:text-right md:whitespace-nowrap">
                     <p className="text-ink/70">{exp.date}</p>
                     {exp.location && <p className="mt-1">{exp.location}</p>}
@@ -130,7 +123,7 @@ export default function ExperienceSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </WeldTimeline>
       </div>
     </section>
   );

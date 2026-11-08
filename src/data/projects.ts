@@ -1,9 +1,9 @@
-// Project content. Category is a free-form label — a future non-CAD project
+// Project content. Category is a free-form label - a future non-CAD project
 // (software, research, writing, etc.) just needs a new categoryLabel, no
 // component changes required.
 //
 // "parts" = physical/assembly components (drives the "N PARTS" chip and the
-// parts-gallery section — only shows when parts.length > 1).
+// parts-gallery section - only shows when parts.length > 1).
 // "images" = supplementary visuals (renders, plots, drawings) that do NOT
 // count toward the parts chip.
 
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     description: [
       "Leading a 5-person aerodynamics sub-team at Rensselaer Motorsport (FSAE) to design and optimize a multi-element front/rear wing for the team's upcoming car.",
       "Scope spans CFD-driven element shaping and optimization, structural integration with the rear wing truss, and manufacturing of the carbon fiber aero components.",
-      "Cover image is pending — the real CFD render will go here once it's ready.",
+      "Cover image is pending - the real CFD render will go here once it's ready.",
     ],
   },
 

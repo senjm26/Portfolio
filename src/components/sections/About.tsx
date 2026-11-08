@@ -81,11 +81,15 @@ export default function About() {
             className="flex justify-center md:justify-start"
           >
             <div className="relative w-80 h-80 md:w-[28rem] md:h-[28rem] group">
-              <div className="absolute inset-0 rounded-full border border-sky/50 transition-transform duration-500 group-hover:scale-105" />
-              <div className="absolute inset-3 rounded-full overflow-hidden border border-ink/10">
+              {/* Corner brackets, like the frame marks on a shop drawing */}
+              <span className="absolute -top-2 -left-2 w-8 h-8 border-t-[3px] border-l-[3px] border-accent transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1" />
+              <span className="absolute -top-2 -right-2 w-8 h-8 border-t-[3px] border-r-[3px] border-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <span className="absolute -bottom-2 -left-2 w-8 h-8 border-b-[3px] border-l-[3px] border-accent transition-transform duration-300 group-hover:-translate-x-1 group-hover:translate-y-1" />
+              <span className="absolute -bottom-2 -right-2 w-8 h-8 border-b-[3px] border-r-[3px] border-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
+              <div className="absolute inset-0 rounded-sm overflow-hidden border border-ink/15">
                 <img
                   src="/images/portrait1.jpg"
-                  alt="Portrait"
+                  alt="Jay Sen"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -130,7 +134,7 @@ export default function About() {
         <motion.div {...fadeUp}>
           <Eyebrow>Skills</Eyebrow>
         </motion.div>
-        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillGroups.map((group, i) => (
             <motion.div
               key={group.title}
@@ -138,6 +142,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="border border-ink/10 rounded-md p-6 bg-cream-raised hover:border-accent/50 hover:shadow-lg hover:shadow-ink/5 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-5 text-ink/70">
                 {group.icon}
@@ -150,7 +155,7 @@ export default function About() {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 font-mono text-xs rounded-sm border border-ink/15 text-ink/70 transition-colors hover:border-sky hover:text-sky"
+                    className="px-3 py-1 font-mono text-xs rounded-sm border border-ink/15 bg-cream text-ink/70 transition-colors hover:border-accent hover:text-accent"
                   >
                     {skill}
                   </span>

@@ -13,9 +13,9 @@ export default function ProjectCard({
     <button
       type="button"
       onClick={onClick}
-      className="group text-left w-full flex flex-col rounded-md overflow-hidden border border-ink/10 bg-cream-raised hover:border-sky hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/10 transition-all duration-300"
+      className="group text-left w-full flex flex-col rounded-md overflow-hidden border border-ink/10 bg-cream-raised hover:border-accent hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/10 transition-all duration-300"
     >
-      <div className="relative w-full aspect-[4/3] bg-[#dcd9d2] overflow-hidden">
+      <div className="relative w-full aspect-[4/3] bg-[#d5d8dc] overflow-hidden">
         {project.renderImage ? (
           <img
             src={project.renderImage}
@@ -32,7 +32,7 @@ export default function ProjectCard({
       </div>
 
       <div className="p-5 flex flex-col gap-3">
-        <h3 className="font-display text-lg tracking-tight text-ink group-hover:text-sky transition-colors">
+        <h3 className="font-display text-lg tracking-tight text-ink group-hover:text-accent transition-colors">
           {project.title}
         </h3>
 

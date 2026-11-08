@@ -18,14 +18,14 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="py-14 grid grid-cols-1 md:grid-cols-3 items-center gap-8">
-          <p className="font-display text-lg tracking-tight text-center md:text-left justify-self-center md:justify-self-start">
+          <p className="font-display text-2xl font-bold uppercase tracking-[0.08em] text-center md:text-left justify-self-center md:justify-self-start">
             {siteConfig.monogram}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-8 font-mono text-xs tracking-[0.15em] uppercase text-off-white/80 justify-self-center">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="flex items-center gap-2 hover:text-sky transition"
+              className="flex items-center gap-2 hover:text-accent-bright transition"
             >
               <Mail size={14} />
               Email
@@ -34,7 +34,7 @@ export default function Footer() {
               href={siteConfig.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-sky transition"
+              className="flex items-center gap-2 hover:text-accent-bright transition"
             >
               <Linkedin size={14} />
               LinkedIn
@@ -43,7 +43,7 @@ export default function Footer() {
               href={siteConfig.resumeHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-sky transition"
+              className="flex items-center gap-2 hover:text-accent-bright transition"
             >
               <FileDown size={14} />
               Resume

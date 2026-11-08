@@ -55,7 +55,7 @@ export default function Contact() {
               href={siteConfig.resumeHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-mono text-xs tracking-[0.15em] uppercase text-ink/80 hover:text-sky transition"
+              className="flex items-center gap-2 font-mono text-xs tracking-[0.15em] uppercase text-ink/80 hover:text-accent transition"
             >
               <FileDown size={18} />
               Resume
@@ -65,7 +65,7 @@ export default function Contact() {
               href={siteConfig.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-mono text-xs tracking-[0.15em] uppercase text-ink/80 hover:text-sky transition"
+              className="flex items-center gap-2 font-mono text-xs tracking-[0.15em] uppercase text-ink/80 hover:text-accent transition"
             >
               <Linkedin size={18} />
               LinkedIn
@@ -88,7 +88,7 @@ export default function Contact() {
 
               <button
                 onClick={() => setShowSuccess(false)}
-                className="font-mono text-xs uppercase tracking-[0.15em] underline hover:text-sky transition"
+                className="font-mono text-xs uppercase tracking-[0.15em] underline hover:text-accent transition"
               >
                 Send another message
               </button>
@@ -102,7 +102,7 @@ export default function Contact() {
                     name="name"
                     placeholder="Name"
                     required
-                    className="w-full border-b border-ink/20 py-3 text-lg bg-transparent focus:outline-none focus:border-sky transition placeholder:text-ink/40"
+                    className="w-full border-b border-ink/20 py-3 text-lg bg-transparent focus:outline-none focus:border-accent transition placeholder:text-ink/40"
                   />
                 </div>
 
@@ -112,7 +112,7 @@ export default function Contact() {
                     name="email"
                     placeholder="Email"
                     required
-                    className="w-full border-b border-ink/20 py-3 text-lg bg-transparent focus:outline-none focus:border-sky transition placeholder:text-ink/40"
+                    className="w-full border-b border-ink/20 py-3 text-lg bg-transparent focus:outline-none focus:border-accent transition placeholder:text-ink/40"
                   />
                   <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
@@ -123,7 +123,7 @@ export default function Contact() {
                     name="subject"
                     placeholder="Subject"
                     required
-                    className="w-full border-b border-ink/20 py-3 text-lg bg-transparent focus:outline-none focus:border-sky transition placeholder:text-ink/40"
+                    className="w-full border-b border-ink/20 py-3 text-lg bg-transparent focus:outline-none focus:border-accent transition placeholder:text-ink/40"
                   />
                 </div>
 
@@ -133,7 +133,7 @@ export default function Contact() {
                     placeholder="Message"
                     rows={4}
                     required
-                    className="w-full border-b border-ink/20 py-3 text-lg bg-transparent focus:outline-none focus:border-sky transition resize-none placeholder:text-ink/40"
+                    className="w-full border-b border-ink/20 py-3 text-lg bg-transparent focus:outline-none focus:border-accent transition resize-none placeholder:text-ink/40"
                   />
                   <ValidationError prefix="Message" field="message" errors={state.errors} />
                 </div>
@@ -142,7 +142,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="mt-6 px-8 py-3 border border-ink/25 rounded-sm font-mono text-xs tracking-[0.15em] uppercase hover:border-sky hover:text-sky transition"
+                className="mt-6 px-8 py-3 border border-ink/25 rounded-sm font-mono text-xs tracking-[0.15em] uppercase hover:border-accent hover:text-accent transition"
               >
                 {state.submitting ? "Sending..." : "Send Message"}
               </button>

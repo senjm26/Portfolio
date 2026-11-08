@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Linkedin, FileDown } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { siteConfig } from "@/data/site";
+import LaserCutText, { NAME_CUT_MS } from "../ui/LaserCutText";
+import LaserCutButton from "../ui/LaserCutButton";
 
 export default function Hero() {
   return (
@@ -15,29 +17,24 @@ export default function Hero() {
           backgroundImage: "url('/images/background.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "brightness(0.45)",
+          filter: "brightness(0.62)",
         }}
       />
 
-      {/* Blueprint grid overlay */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(239,233,223,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(239,233,223,0.06)_1px,transparent_1px)] bg-[size:40px_40px]" />
+      {/* Vignette so the plate reads as a lit sheet on the cutting bed */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.55)_100%)]" />
 
       {/* Center content */}
       <div className="relative z-10 text-center px-6 max-w-5xl">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="font-display text-[clamp(56px,8vw,120px)] tracking-tight leading-[0.95]"
-        >
-          {siteConfig.name}
-        </motion.h1>
+        {/* Name laser-cut through the plate */}
+        <h1 className="sr-only">{siteConfig.name}</h1>
+        <LaserCutText />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="mt-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-6"
         >
           <TypeAnimation
             sequence={[
@@ -61,36 +58,19 @@ export default function Hero() {
             deletionSpeed={35}
             repeat={Infinity}
             cursor={true}
-            className="font-mono text-xl md:text-3xl tracking-wide text-off-white/80"
+            className="laser-text font-mono font-semibold text-xl md:text-3xl tracking-wide"
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-12 flex justify-center gap-4 flex-wrap"
-        >
-          <a
-            href={siteConfig.resumeHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 border border-off-white/30 text-off-white font-mono text-xs tracking-[0.2em] uppercase rounded-md hover:bg-sky hover:border-sky hover:text-charcoal transition-all duration-300 flex items-center gap-3"
-          >
-            <FileDown size={16} />
+        {/* Buttons cut by the same laser, right after the name */}
+        <div className="mt-12 flex justify-center gap-4 flex-wrap">
+          <LaserCutButton href={siteConfig.resumeHref} icon={<FileDown size={16} />} delay={NAME_CUT_MS}>
             Resume
-          </a>
-
-          <a
-            href={siteConfig.linkedinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 border border-off-white/30 text-off-white font-mono text-xs tracking-[0.2em] uppercase rounded-md hover:bg-sky hover:border-sky hover:text-charcoal transition-all duration-300 flex items-center gap-3"
-          >
-            <Linkedin size={16} />
+          </LaserCutButton>
+          <LaserCutButton href={siteConfig.linkedinUrl} icon={<Linkedin size={16} />} delay={NAME_CUT_MS + 420}>
             LinkedIn
-          </a>
-        </motion.div>
+          </LaserCutButton>
+        </div>
       </div>
 
       {/* Bottom fade into the light section below */}

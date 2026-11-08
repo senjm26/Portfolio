@@ -12,7 +12,7 @@ export default function CADViewer({
   cameraMargin?: number;
 }) {
   return (
-    <div className="w-full h-full bg-[#dcd9d2] rounded-xl shadow-inner overflow-hidden">
+    <div className="w-full h-full bg-[#d5d8dc] rounded-xl shadow-inner overflow-hidden">
   <div className="w-full h-full p-3">
       <Canvas
       style={{ width: "100%", height: "100%" }}

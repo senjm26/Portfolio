@@ -1,4 +1,4 @@
-// Central site config. Edit values here — they propagate to Navbar, Hero,
+// Central site config. Edit values here - they propagate to Navbar, Hero,
 // About, Contact, and Footer automatically.
 
 export interface SiteConfig {

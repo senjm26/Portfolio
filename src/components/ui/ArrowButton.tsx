@@ -16,7 +16,7 @@ export default function ArrowButton({
       rounded-full
       bg-cream-raised text-ink border border-ink/15
       transition
-      hover:border-sky hover:text-sky hover:scale-105
+      hover:border-accent hover:text-accent hover:scale-105
       active:scale-95
       "
     >

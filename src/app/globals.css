@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Light theme (default for all sections) — warm ivory/parchment */
-  --cream: #f6f1e7;
-  --cream-raised: #fffcf5;
-  --ink: #17140f;
-  --sky: #6b6f74; /* platinum/pewter accent */
+  /* Light theme (default for all sections) - cool shop-floor steel grays.
+     Token names are historical: "cream" is the base light surface. */
+  --cream: #f3f4f6;
+  --cream-raised: #fafbfc;
+  --ink: #15171a;
+  --accent: #1f5fae; /* machine blue, dark enough for text on light steel */
+  --accent-bright: #4c9dff; /* brighter blue for dark surfaces and glows */
 
   /* Dark theme (Hero + Footer bookends) */
-  --charcoal: #1b1a18;
-  --charcoal-raised: #242220;
-  --off-white: #efe9df;
+  --charcoal: #17191c;
+  --charcoal-raised: #212428;
+  --off-white: #e8eaec;
 
   --background: var(--cream);
   --foreground: var(--ink);
@@ -22,7 +24,8 @@
   --color-cream: var(--cream);
   --color-cream-raised: var(--cream-raised);
   --color-ink: var(--ink);
-  --color-sky: var(--sky);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
   --color-charcoal: var(--charcoal);
   --color-charcoal-raised: var(--charcoal-raised);
   --color-off-white: var(--off-white);
@@ -36,7 +39,14 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: var(--accent-bright);
+  color: var(--charcoal);
 }
 
 html {
@@ -53,4 +63,77 @@ html {
 
 section {
   scroll-margin-top: 100px;
+}
+
+/* Dark brushed-metal strip matching the hero plate (navbar, mobile menu) */
+.metal-strip {
+  background-color: var(--charcoal);
+  background-image: linear-gradient(rgba(10, 11, 12, 0.5), rgba(10, 11, 12, 0.5)), url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hero subtitle - white like the cooled laser cuts around it */
+.laser-text {
+  color: #f4f4f2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.laser-text::after {
+  color: var(--accent-bright);
+  text-shadow: 0 0 6px rgba(76, 157, 255, 0.8);
+}
+
+/* Laser-cut buttons (LaserCutButton.tsx): kerf and label light up blue on hover */
+.laser-groove,
+.laser-label {
+  transition: stroke 0.2s, filter 0.2s, color 0.2s, text-shadow 0.2s, opacity 0.3s;
+}
+.laser-button:hover .laser-groove,
+.laser-button:focus-visible .laser-groove {
+  stroke: var(--accent-bright);
+  filter: drop-shadow(0 0 4px rgba(76, 157, 255, 0.9));
+}
+.laser-button:hover .laser-label,
+.laser-button:focus-visible .laser-label {
+  color: var(--accent-bright);
+  text-shadow: 0 0 8px rgba(76, 157, 255, 0.6);
+}
+
+/* Weld timeline (WeldTimeline.tsx) - freshly laid metal near the torch, still glowing as it cools */
+.weld-hot {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(120, 90, 70, 0.2) 18%,
+    rgba(150, 50, 20, 0.45) 40%,
+    rgba(200, 60, 15, 0.7) 62%,
+    rgba(255, 120, 30, 0.9) 84%,
+    #fff1c2 100%
+  );
+  mix-blend-mode: hard-light;
+}
+
+/* Closing rosette glowing after the arc breaks; fades out after the bead has cooled */
+.weld-hot-spot {
+  background: radial-gradient(
+    circle,
+    #fff1c2 0%,
+    rgba(255, 120, 30, 0.92) 38%,
+    rgba(200, 60, 15, 0.72) 62%,
+    rgba(150, 50, 20, 0.4) 82%,
+    transparent 100%
+  );
+  mix-blend-mode: hard-light;
+}
+
+.weld-arc {
+  background: radial-gradient(circle, #fffaf0 0%, #ffd27a 25%, rgba(255, 120, 30, 0.6) 50%, transparent 72%);
+  animation: weld-flicker 0.12s steps(2) infinite;
+}
+
+@keyframes weld-flicker {
+  /* No opacity here: the inline opacity is what turns the torch off */
+  0% { filter: brightness(1); transform: translate(-50%, -50%) scale(1); }
+  50% { filter: brightness(0.8); transform: translate(-50%, -50%) scale(0.85); }
+  100% { filter: brightness(1.1); transform: translate(-50%, -50%) scale(1.05); }
 }

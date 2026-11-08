@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Eyebrow from "../ui/Eyebrow";
+import WeldTimeline from "../ui/WeldTimeline";
 
 export default function Education() {
   const education = [
@@ -47,7 +48,7 @@ export default function Education() {
 
   return (
     <section id="education" className="relative py-32 px-6 bg-cream text-ink">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +59,7 @@ export default function Education() {
         </motion.div>
 
         {/* Timeline Wrapper */}
-        <div className="space-y-12 mt-16">
+        <WeldTimeline className="space-y-12 mt-16" seed={23}>
           {education.map((edu, idx) => (
             <motion.div
               key={edu.school}
@@ -68,16 +69,8 @@ export default function Education() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="relative pl-8 md:pl-16"
             >
-              {/* Connector to next dot (only between items, never trailing past the last) */}
-              {idx < education.length - 1 && (
-                <div className="absolute left-3 md:left-6 -translate-x-1/2 top-10 h-[calc(100%+3rem)] w-px bg-ink/15" />
-              )}
-
-              {/* Dot */}
-              <div className="absolute left-3 md:left-6 -translate-x-1/2 top-10 w-3 h-3 rounded-full bg-sky border-4 border-cream z-10" />
-
               {/* Card */}
-              <div className="group border border-ink/10 rounded-md p-5 md:p-8 hover:border-sky/50 hover:shadow-lg hover:shadow-ink/5 transition-all duration-300 bg-cream-raised">
+              <div className="group border border-ink/10 rounded-md p-5 md:p-8 hover:border-accent/50 hover:shadow-lg hover:shadow-ink/5 transition-all duration-300 bg-cream-raised">
                 {/* Top Row */}
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
                   <div>
@@ -97,7 +90,7 @@ export default function Education() {
                   {edu.highlights.map((item, i) => (
                     <span
                       key={`${edu.school}-highlight-${i}`}
-                      className="font-mono text-xs px-3 py-1 rounded-sm border border-ink/15 text-ink/70 transition-colors group-hover:border-sky/30"
+                      className="font-mono text-xs px-3 py-1 rounded-sm border border-ink/15 text-ink/70 transition-colors group-hover:border-accent/30"
                     >
                       {item}
                     </span>
@@ -115,7 +108,7 @@ export default function Education() {
                       {edu.coursework.map((course, i) => (
                         <span
                           key={`${edu.school}-course-${i}`}
-                          className="font-mono text-xs px-3 py-1 rounded-sm border border-ink/15 text-ink/60 transition-colors group-hover:border-sky/30"
+                          className="font-mono text-xs px-3 py-1 rounded-sm border border-ink/15 text-ink/60 transition-colors group-hover:border-accent/30"
                         >
                           {course}
                         </span>
@@ -126,7 +119,7 @@ export default function Education() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </WeldTimeline>
       </div>
     </section>
   );

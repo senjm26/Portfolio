@@ -60,7 +60,7 @@ export default function ProjectModal({
           <button
             type="button"
             onClick={onClose}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-cream border border-ink/15 text-ink hover:text-sky hover:border-sky transition"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-cream border border-ink/15 text-ink hover:text-accent hover:border-accent transition"
             aria-label="Close"
           >
             <X size={18} />
@@ -91,7 +91,7 @@ export default function ProjectModal({
                     key={img}
                     type="button"
                     onClick={() => setExpandedImage(img)}
-                    className="w-full rounded-md overflow-hidden border border-ink/10 bg-cream cursor-zoom-in hover:border-sky transition"
+                    className="w-full rounded-md overflow-hidden border border-ink/10 bg-cream cursor-zoom-in hover:border-accent transition"
                   >
                     <img
                       src={img}
@@ -120,7 +120,7 @@ export default function ProjectModal({
             <button
               type="button"
               onClick={() => setDrawingIndex(0)}
-              className="mt-4 font-mono text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-sm border border-ink/20 text-ink/80 hover:border-sky hover:text-sky transition"
+              className="mt-4 font-mono text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-sm border border-ink/20 text-ink/80 hover:border-accent hover:text-accent transition"
             >
               View Drawing ({drawingImages.length} Pages)
             </button>
@@ -128,7 +128,7 @@ export default function ProjectModal({
 
           {/* Spec strip */}
           <div className="mt-10 max-w-md">
-            <SpecRow label={toolsLabel} value={project.tools.join(", ") || "—"} />
+            <SpecRow label={toolsLabel} value={project.tools.join(", ") || "-"} />
           </div>
 
           {/* Write-up */}
@@ -186,7 +186,7 @@ export default function ProjectModal({
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-2 right-2 md:top-6 md:right-6 text-off-white text-3xl hover:text-sky transition"
+              className="absolute top-2 right-2 md:top-6 md:right-6 text-off-white text-3xl hover:text-accent transition"
               onClick={() => setDrawingIndex(null)}
               aria-label="Close drawing"
             >
@@ -200,7 +200,7 @@ export default function ProjectModal({
             />
 
             <button
-              className="absolute left-2 md:left-6 text-off-white text-3xl hover:text-sky transition"
+              className="absolute left-2 md:left-6 text-off-white text-3xl hover:text-accent transition"
               onClick={() =>
                 setDrawingIndex(
                   (drawingIndex - 1 + drawingImages.length) % drawingImages.length
@@ -212,7 +212,7 @@ export default function ProjectModal({
             </button>
 
             <button
-              className="absolute right-2 md:right-6 text-off-white text-3xl hover:text-sky transition"
+              className="absolute right-2 md:right-6 text-off-white text-3xl hover:text-accent transition"
               onClick={() => setDrawingIndex((drawingIndex + 1) % drawingImages.length)}
               aria-label="Next page"
             >
