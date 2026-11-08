@@ -5,15 +5,7 @@ export default function Footer() {
   return (
     <footer className="relative text-off-white px-6 overflow-hidden">
       {/* Brushed aluminum background */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/images/background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "brightness(0.4)",
-        }}
-      />
+      <div className="metal-plate absolute inset-0 z-0" style={{ filter: "brightness(0.4)" }} />
       <div className="absolute inset-0 z-0 bg-charcoal/40" />
 
       <div className="relative z-10 max-w-6xl mx-auto">

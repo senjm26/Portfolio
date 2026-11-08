@@ -435,10 +435,23 @@ export default function WeldTimeline({
         titles.map((t) => t - top),
       );
     };
-    redraw();
+    // Drawing the bead is a fair bit of work, so hold off until the timeline is
+    // about a screen away instead of spending it during page load
     const ro = new ResizeObserver(redraw);
-    ro.observe(timeline);
-    return () => ro.disconnect();
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        io.disconnect();
+        redraw();
+        ro.observe(timeline);
+      },
+      { rootMargin: "100% 0px" },
+    );
+    io.observe(timeline);
+    return () => {
+      io.disconnect();
+      ro.disconnect();
+    };
   }, [seed, trackH, endPad]);
 
   const animate = !reduceMotion;

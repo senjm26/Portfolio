@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Project } from "@/data/projects";
 
 export default function ProjectCard({
@@ -17,10 +18,12 @@ export default function ProjectCard({
     >
       <div className="relative w-full aspect-[4/3] bg-[#d5d8dc] overflow-hidden">
         {project.renderImage ? (
-          <img
+          <Image
             src={project.renderImage}
             alt={project.title}
-            className="w-full h-full object-contain group-hover:scale-[1.04] transition-transform duration-300"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+            className="object-contain group-hover:scale-[1.04] transition-transform duration-300"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">

@@ -65,12 +65,29 @@ section {
   scroll-margin-top: 100px;
 }
 
+/* Brushed-metal plate behind the hero and footer, sized down for phones */
+.metal-plate {
+  background-color: var(--charcoal);
+  background-image: url("/images/background-960.webp");
+  background-size: cover;
+  background-position: center;
+}
+
 /* Dark brushed-metal strip matching the hero plate (navbar, mobile menu) */
 .metal-strip {
   background-color: var(--charcoal);
-  background-image: linear-gradient(rgba(10, 11, 12, 0.5), rgba(10, 11, 12, 0.5)), url("/images/background.jpg");
+  background-image: linear-gradient(rgba(10, 11, 12, 0.5), rgba(10, 11, 12, 0.5)), url("/images/background-960.webp");
   background-size: cover;
   background-position: center;
+}
+
+@media (min-width: 960px) {
+  .metal-plate {
+    background-image: url("/images/background-1920.webp");
+  }
+  .metal-strip {
+    background-image: linear-gradient(rgba(10, 11, 12, 0.5), rgba(10, 11, 12, 0.5)), url("/images/background-1920.webp");
+  }
 }
 
 /* Hero subtitle - white like the cooled laser cuts around it */

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Linkedin, FileDown } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { siteConfig } from "@/data/site";
@@ -11,15 +10,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center text-off-white overflow-hidden">
       {/* Brushed aluminum background */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/images/background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "brightness(0.62)",
-        }}
-      />
+      <div className="metal-plate absolute inset-0 z-0" style={{ filter: "brightness(0.62)" }} />
 
       {/* Vignette so the plate reads as a lit sheet on the cutting bed */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.55)_100%)]" />
@@ -30,14 +21,15 @@ export default function Hero() {
         <h1 className="sr-only">{siteConfig.name}</h1>
         <LaserCutText />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-6"
-        >
+        {/* Visible from the first paint with the longest phrase server-rendered: the
+            browser counts the largest text it has painted as the page's main content,
+            and skips text painted at zero opacity, so a fade-in or a later, longer
+            phrase would push that measurement out to whenever it got typed */}
+        <div className="mt-6">
           <TypeAnimation
             sequence={[
+              "Problem Solver...",
+              2000,
               "Student...",
               2000,
               "Engineer...",
@@ -48,11 +40,10 @@ export default function Hero() {
               2000,
               "Machinist...",
               2000,
-              "Problem Solver...",
-              2000,
               "Creator...",
               2000,
             ]}
+            preRenderFirstString
             wrapper="span"
             speed={45}
             deletionSpeed={35}
@@ -60,7 +51,7 @@ export default function Hero() {
             cursor={true}
             className="laser-text font-mono font-semibold text-xl md:text-3xl tracking-wide"
           />
-        </motion.div>
+        </div>
 
         {/* Buttons cut by the same laser, right after the name */}
         <div className="mt-12 flex justify-center gap-4 flex-wrap">

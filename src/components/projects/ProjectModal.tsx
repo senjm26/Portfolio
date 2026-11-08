@@ -6,7 +6,14 @@ import { Project } from "@/data/projects";
 import SpecRow from "../ui/SpecRow";
 import Eyebrow from "../ui/Eyebrow";
 import ArrowButton from "../ui/ArrowButton";
-import ProjectViewer3D from "./ProjectViewer3D";
+import dynamic from "next/dynamic";
+
+// three.js is the heaviest code on the site and only needed once a project with a
+// model is opened, so it loads then instead of with the page
+const ProjectViewer3D = dynamic(() => import("./ProjectViewer3D"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full animate-pulse bg-ink/5 rounded-md" />,
+});
 
 export default function ProjectModal({
   project,

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { PenTool, Wrench, MonitorCog, Users } from "lucide-react";
 import Eyebrow from "../ui/Eyebrow";
@@ -87,10 +88,12 @@ export default function About() {
               <span className="absolute -bottom-2 -left-2 w-8 h-8 border-b-[3px] border-l-[3px] border-accent transition-transform duration-300 group-hover:-translate-x-1 group-hover:translate-y-1" />
               <span className="absolute -bottom-2 -right-2 w-8 h-8 border-b-[3px] border-r-[3px] border-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
               <div className="absolute inset-0 rounded-sm overflow-hidden border border-ink/15">
-                <img
+                <Image
                   src="/images/portrait1.jpg"
                   alt="Jay Sen"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(min-width: 768px) 448px, 320px"
+                  className="object-cover"
                 />
               </div>
             </div>
